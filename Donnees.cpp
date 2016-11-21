@@ -58,6 +58,30 @@ void Donnees::setCapacites(long double *capacites) {
 	this->capacites = capacites;
 }
 
+int Donnees::getM() const {
+	return this->M;
+}
+
+int Donnees::getN() const {
+	return this->N;
+}
+
+long double Donnees::coutAlloc(int i, int j) const {
+	return this->coutsAllocation[i][j];
+}
+
+long double Donnees::demande(int i) const {
+	return this->demandes[i];
+}
+
+long double Donnees::coutOuverture(int i) const {
+	return this->coutsOuverture[i];
+}
+
+long double Donnees::capacite(int i) const {
+	return this->capacites[i];
+}
+
 void Donnees::afficherCoutsAllocation() const {
 	cout << "COUTS ALLOCATION" << endl;
 	for (int client = 0; client < M; ++client) {

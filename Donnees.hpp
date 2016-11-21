@@ -24,6 +24,14 @@ class Donnees {
 		void setCoutsOuverture(long double *coutsOuverture);
 		void setCapacites(long double *capacites);
 		
+		// Getters
+		int getM() const;
+		int getN() const;
+		long double coutAlloc(int i, int j) const;
+		long double demande(int i) const;
+		long double coutOuverture(int i) const;
+		long double capacite(int i) const;
+		
 		// Affichages
 		void afficherCoutsAllocation() const;
 		void afficherDemandes() const;
