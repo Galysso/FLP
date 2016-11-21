@@ -1,5 +1,5 @@
 CC = g++
-SOURCES = 
+SOURCES =
 CFLAGS = -Wall -g -lglpk -lm
 .PHONY = clean
 
