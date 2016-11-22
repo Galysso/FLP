@@ -7,40 +7,55 @@
 using namespace std;
 
 SSCFLP::SSCFLP(Donnees *d) {
+	this->entier = false;
+	this->ia = NULL;
+	this->ja = NULL;
+	this->ar = NULL;
+	this->prob = NULL;
 	this->d = d;
 }
 
-void SSCFLP::resolutionGLPK() {
-	int M = d->getM();
-	int N = d->getN();
+void SSCFLP::glpkModeliserProblemeEntier() {
+	this->entier = true;
 	
-	// Creation du problème
-	glp_prob *prob;
-	prob = glp_create_prob();
+	int M = this->d->getM();
+	int N = this->d->getN();
+	
+	// Suppression de l'ancien problème
+	if (prob != NULL) {
+		free(prob);
+	}
+	
+	// Creation du nouveau problème
+	this->prob = glp_create_prob();
 	glp_set_prob_name(prob, "SSCFLP");
 	
 	// Problème de minimisation
 	glp_set_obj_dir(prob, GLP_MIN);
 	
 	// On a M+N contraintes 
-	glp_add_rows(prob, M+N);
+	glp_add_rows(this->prob, M+N);
 	
 	// On a M*N + N variables
-	glp_add_cols(prob, M*N+N);
-	
-	cout << "M = " << M << endl;
-	cout << "N = " << N << endl;
-	cout << "nombre colonne = " << 1+N+M*N << endl;
+	glp_add_cols(this->prob, M*N+N);
 	
 	int taille = M*N+N*(M+1);
-	cout << "taille = " << taille << endl;
 	double tab[1+M+N][1+taille];
 	
-	int *ia, *ja;
-	double *ar;
-	ia = new int [1+taille];
-	ja = new int [1+taille];
-	ar = new double [1+taille];
+	if (this->ia != NULL) {
+		delete [] this->ia;
+	}
+	this->ia = new int [1+taille];
+	
+	if (this->ja != NULL) {
+		delete [] this->ja;
+	}
+	this->ja = new int [1+taille];
+	
+	if (this->ar != NULL) {
+		delete [] this->ar;
+	}
+	this->ar = new double [1+taille];
 	
 	int pos = 1;
 	int i, j;
@@ -51,7 +66,7 @@ void SSCFLP::resolutionGLPK() {
 		client = i-1;
 		
 		//~ cout << "i="<<i<< "\tborne =\tx=1.0" << endl;
-		glp_set_row_bnds(prob, i, GLP_FX, 1.0, 1.0);
+		glp_set_row_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
 		
 		for (j = 1; j <= N; ++j) {
 			facil = j-1;
@@ -61,8 +76,8 @@ void SSCFLP::resolutionGLPK() {
 			
 			//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
 			//~ glp_set_col_kind(prob, col, GLP_IV);
-			glp_set_col_kind(prob, col, GLP_BV);
-			glp_set_obj_coef(prob, col, d->coutAlloc(facil,client));
+			glp_set_col_kind(this->prob, col, GLP_BV);
+			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(facil,client));
 			
 			ia[pos] = i;
 			ja[pos] = col;
@@ -77,15 +92,15 @@ void SSCFLP::resolutionGLPK() {
 		facil = i-M-1;
 		
 		//~ cout << "i="<<i<< "\tborne =\tx<=0" << endl;
-		glp_set_row_bnds(prob, i, GLP_UP, 0.0, 0.0);
+		glp_set_row_bnds(this->prob, i, GLP_UP, 0.0, 0.0);
 		
 		for (j = 1; j <= M; ++j) {
 			client = j-1;
 			col = (i-1-M)*M+j;//j+(i-M-1)*(M+1);
 			
-			ia[pos] = i;
-			ja[pos] = col;
-			ar[pos] = d->demande(client);
+			this->ia[pos] = i;
+			this->ja[pos] = col;
+			this->ar[pos] = d->demande(client);
 			++pos;
 		}
 		col = (i-M)+(j-1)*N;
@@ -94,15 +109,63 @@ void SSCFLP::resolutionGLPK() {
 
 		//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
 		//~ glp_set_col_kind(prob, col, GLP_IV);
-		glp_set_col_kind(prob, col, GLP_BV);
-		glp_set_obj_coef(prob, col, d->coutOuverture(facil));
+		glp_set_col_kind(this->prob, col, GLP_BV);
+		glp_set_obj_coef(this->prob, col, this->d->coutOuverture(facil));
 		
-		ia[pos] = i;
-		ja[pos] = col;
-		ar[pos] = -d->capacite(facil);
+		this->ia[pos] = i;
+		this->ja[pos] = col;
+		this->ar[pos] = -d->capacite(facil);
 		
 		++pos;
 	}
+	
+	// Chargement de la matrice
+	glp_load_matrix(this->prob, taille, ia, ja, ar);
+	glp_write_lp(this->prob, NULL, "SSCFLP");
+}
+
+void SSCFLP::glpkResoudreProbleme() {
+	glp_simplex(this->prob, NULL);
+	if (this->entier) {
+		glp_intopt(this->prob,NULL);
+	}
+}
+
+void SSCFLP::glpkAfficherSolution() {
+	int M = this->d->getM();
+	int N = this->d->getN();
+	int i;
+	
+	double z = glp_mip_obj_val(this->prob);
+	
+	cout << "FACILITES :\n{";
+	for (i = M*N+1; i <= M*N+N; ++i) {
+		//~ cout << i << endl;
+		//~ cout << glp_mip_col_val(prob, i) << ";";
+		if (glp_mip_col_val(this->prob, i)) {
+			cout << i-M*N-1 << ",";
+		}
+	}
+	cout << "}"<<endl;
+	
+	cout << "LIAISONS :\n{";
+	for (i = 1; i <= M*N; ++i) {
+		if (glp_mip_col_val(this->prob, i) == 1) {
+			cout <<"{"<<(i-1)/M << "," << (i-1)%M << "},";
+		}
+	}
+	cout << "}"<<endl;
+	
+	cout << endl;
+	cout << "Z = " << z << endl;
+}
+
+void SSCFLP::glpkAfficherModelisation() {
+	int i, j;
+	int M = this->d->getM();
+	int N = this->d->getN();
+	int taille = M*N+N*(M+1);
+	double tab[1+M+N][1+taille];
 	
 	// TEST TABLEAU ----------------------------------------------------
 	///-----------------------------------------------------------------
@@ -130,35 +193,4 @@ void SSCFLP::resolutionGLPK() {
 	///-----------------------------------------------------------------
 	///-----------------------------------------------------------------
 	// FIN TEST --------------------------------------------------------
-	
-	
-	// Chargement de la matrice
-	glp_load_matrix(prob, taille, ia, ja, ar);
-	glp_write_lp(prob, NULL, "SSCFLP_TEST");
-	
-	// Résolution
-	glp_simplex(prob, NULL);
-	glp_intopt(prob,NULL);
-	double z = glp_mip_obj_val(prob);
-	
-	cout << "FACILITES :\n{";
-	for (i = M*N+1; i <= M*N+N; ++i) {
-		//~ cout << i << endl;
-		//~ cout << glp_mip_col_val(prob, i) << ";";
-		if (glp_mip_col_val(prob, i)) {
-			cout << i-M*N-1 << ",";
-		}
-	}
-	cout << "}"<<endl;
-	
-	cout << "LIAISONS :\n{";
-	for (i = 1; i <= M*N; ++i) {
-		if (glp_mip_col_val(prob, i) == 1) {
-			cout <<"{"<< i/M << "," << i/N << "},";
-		}
-	}
-	cout << "}"<<endl;
-	
-	cout << endl;
-	cout << "Z = " << z << endl;
 }
