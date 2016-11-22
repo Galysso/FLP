@@ -23,9 +23,9 @@ void Parser::lecture(Donnees *d, string nomFichier) const {
 		d->setN(N);
 		
 		// coûts allocation
-		long double **coutsAllocation = new long double * [N];
+		double **coutsAllocation = new double * [N];
 		for (int plant = 0; plant < N; ++plant) {
-			coutsAllocation[plant] = new long double [M];
+			coutsAllocation[plant] = new double [M];
 			for (int client = 0; client < M; ++client) {
 				f >> coutsAllocation[plant][client];
 			}
@@ -33,21 +33,21 @@ void Parser::lecture(Donnees *d, string nomFichier) const {
 		d->setCoutsAllocation(coutsAllocation);
 		
 		// demandes
-		long double *demandes = new long double [M];
+		double *demandes = new double [M];
 		for (int client = 0; client < M; ++client) {
 			f >> demandes[client];
 		}
 		d->setDemandes(demandes);
 		
 		// coûts ouverture
-		long double *coutsOuverture = new long double [N];
+		double *coutsOuverture = new double [N];
 		for (int plant = 0; plant < N; ++plant) {
 			f >> coutsOuverture[plant];
 		}
 		d->setCoutsOuverture(coutsOuverture);
 		
 		// capacites
-		long double *capacites = new long double [N];
+		double *capacites = new double [N];
 		for (int plant = 0; plant < N; ++plant) {
 			f >> capacites[plant];
 		}

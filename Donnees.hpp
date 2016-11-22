@@ -7,10 +7,10 @@ class Donnees {
 	private:
 		int M;							/// Nombre de clients
 		int N;							/// Nombre de locations
-		long double **coutsAllocation;	/// Vecteur des coûts de liaison
-		long double *demandes;			/// Vecteur des demandes des clients
-		long double *coutsOuverture;	/// Vecteur des coûts des ouverture
-		long double *capacites;			/// Vecteur des capacités des locations
+		double **coutsAllocation;	/// Vecteur des coûts de liaison
+		double *demandes;			/// Vecteur des demandes des clients
+		double *coutsOuverture;	/// Vecteur des coûts des ouverture
+		double *capacites;			/// Vecteur des capacités des locations
 		
 	public:
 		// Constructeur vide, nécessite un parser
@@ -19,18 +19,18 @@ class Donnees {
 		// Setters
 		void setM(int M);
 		void setN(int N);
-		void setCoutsAllocation(long double **coutsAllocation);
-		void setDemandes(long double *demandes);
-		void setCoutsOuverture(long double *coutsOuverture);
-		void setCapacites(long double *capacites);
+		void setCoutsAllocation(double **coutsAllocation);
+		void setDemandes(double *demandes);
+		void setCoutsOuverture(double *coutsOuverture);
+		void setCapacites(double *capacites);
 		
 		// Getters
 		int getM() const;
 		int getN() const;
-		long double coutAlloc(int i, int j) const;
-		long double demande(int i) const;
-		long double coutOuverture(int i) const;
-		long double capacite(int i) const;
+		double coutAlloc(int i, int j) const;
+		double demande(int i) const;
+		double coutOuverture(int i) const;
+		double capacite(int i) const;
 		
 		// Affichages
 		void afficherCoutsAllocation() const;

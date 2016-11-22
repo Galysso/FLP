@@ -1,6 +1,6 @@
 CC = g++
 SOURCES = Parser.cpp Donnees.cpp SSCFLP.cpp
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -O3
 LDFLAGS = -lm -lglpk
 .PHONY = clean
 

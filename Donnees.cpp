@@ -23,7 +23,7 @@ void Donnees::setN(int N) {
 	this->N = N;
 }
 
-void Donnees::setCoutsAllocation(long double **coutsAllocation) {
+void Donnees::setCoutsAllocation(double **coutsAllocation) {
 	if (this->coutsAllocation != NULL) {
 		for (int i = 0; i < M; ++i) {
 			if (this->coutsAllocation[i] != NULL) {
@@ -36,7 +36,7 @@ void Donnees::setCoutsAllocation(long double **coutsAllocation) {
 	this->coutsAllocation = coutsAllocation;
 }
 
-void Donnees::setDemandes(long double *demandes) {
+void Donnees::setDemandes(double *demandes) {
 	if (this->demandes != NULL) {
 		delete [] this->demandes;
 	}
@@ -44,14 +44,14 @@ void Donnees::setDemandes(long double *demandes) {
 	this->demandes = demandes;
 }
 
-void Donnees::setCoutsOuverture(long double *coutsOuverture) {
+void Donnees::setCoutsOuverture(double *coutsOuverture) {
 	if (this->coutsOuverture != NULL) {
 		delete [] coutsOuverture;
 	}
 	this->coutsOuverture = coutsOuverture;
 }
 
-void Donnees::setCapacites(long double *capacites) {
+void Donnees::setCapacites(double *capacites) {
 	if (this->capacites != NULL) {
 		delete [] this->capacites;
 	}
@@ -66,19 +66,19 @@ int Donnees::getN() const {
 	return this->N;
 }
 
-long double Donnees::coutAlloc(int i, int j) const {
+double Donnees::coutAlloc(int i, int j) const {
 	return this->coutsAllocation[i][j];
 }
 
-long double Donnees::demande(int i) const {
+double Donnees::demande(int i) const {
 	return this->demandes[i];
 }
 
-long double Donnees::coutOuverture(int i) const {
+double Donnees::coutOuverture(int i) const {
 	return this->coutsOuverture[i];
 }
 
-long double Donnees::capacite(int i) const {
+double Donnees::capacite(int i) const {
 	return this->capacites[i];
 }
 
