@@ -15,7 +15,13 @@ SSCFLP::SSCFLP(Donnees *d) {
 	this->d = d;
 }
 
-void SSCFLP::glpkModeliserProblemeEntier() {
+SSCFLP::~SSCFLP() {
+	if (prob != NULL) {
+		glp_delete_prob(prob);
+	}
+}
+
+void SSCFLP::glpkModeliserProbleme() {
 	this->entier = true;
 	
 	int M = this->d->getM();
@@ -23,7 +29,7 @@ void SSCFLP::glpkModeliserProblemeEntier() {
 	
 	// Suppression de l'ancien problème
 	if (prob != NULL) {
-		free(prob);
+		glp_delete_prob(prob);
 	}
 	
 	// Creation du nouveau problème
@@ -74,9 +80,11 @@ void SSCFLP::glpkModeliserProblemeEntier() {
 			
 			//~ cout << "j="<<col<</*"\tborne =\t0<=x<=1 (int)*/"\tcoef="<<d->coutAlloc(facil,client)<< endl;
 			
-			//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
-			//~ glp_set_col_kind(prob, col, GLP_IV);
-			glp_set_col_kind(this->prob, col, GLP_BV);
+			if (this->entier) {
+				glp_set_col_kind(this->prob, col, GLP_BV);
+			} else {
+				glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
+			}
 			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(facil,client));
 			
 			ia[pos] = i;
@@ -107,9 +115,10 @@ void SSCFLP::glpkModeliserProblemeEntier() {
 
 		//~ cout << "j="<<col<</*"\tborne =\t0<=x<=1 (int)*/"\tcoef="<<d->coutOuverture(facil)<< endl;
 
-		//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
 		//~ glp_set_col_kind(prob, col, GLP_IV);
 		glp_set_col_kind(this->prob, col, GLP_BV);
+		//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
+			
 		glp_set_obj_coef(this->prob, col, this->d->coutOuverture(facil));
 		
 		this->ia[pos] = i;
@@ -121,7 +130,7 @@ void SSCFLP::glpkModeliserProblemeEntier() {
 	
 	// Chargement de la matrice
 	glp_load_matrix(this->prob, taille, ia, ja, ar);
-	glp_write_lp(this->prob, NULL, "SSCFLP");
+	//~ glp_write_lp(this->prob, NULL, "SSCFLP");
 }
 
 void SSCFLP::glpkResoudreProbleme() {
@@ -150,7 +159,7 @@ void SSCFLP::glpkAfficherSolution() {
 	
 	cout << "LIAISONS :\n{";
 	for (i = 1; i <= M*N; ++i) {
-		if (glp_mip_col_val(this->prob, i) == 1) {
+		if (glp_mip_col_val(this->prob, i) > 0) {
 			cout <<"{"<<(i-1)/M << "," << (i-1)%M << "},";
 		}
 	}
@@ -193,4 +202,17 @@ void SSCFLP::glpkAfficherModelisation() {
 	///-----------------------------------------------------------------
 	///-----------------------------------------------------------------
 	// FIN TEST --------------------------------------------------------
+}
+
+void SSCFLP::glpkSetEntier() {
+	this->entier = true;
+}
+
+void SSCFLP::glpkSetRelache() {
+	this->entier = false;
+}
+
+
+void SSCFLP::setDonnees(Donnees *d) {
+	this->d = d;
 }

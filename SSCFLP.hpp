@@ -15,11 +15,17 @@ class SSCFLP {
 		
 	public:
 		SSCFLP(Donnees *d);
+		~SSCFLP();
 		void resolutionGLPK();
-		void glpkModeliserProblemeEntier();
+		void glpkModeliserProbleme();
 		void glpkResoudreProbleme();
 		void glpkAfficherSolution();
 		void glpkAfficherModelisation();
+		void glpkSetEntier();
+		void glpkSetRelache();
+		void glpkDelete();
+		
+		void setDonnees(Donnees *d);
 };
 
 #endif //SSCFLP_HPP
