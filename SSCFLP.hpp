@@ -19,6 +19,7 @@ class SSCFLP {
 		void resolutionGLPK();
 		void glpkModeliserProbleme();
 		void glpkResoudreProbleme();
+		void glpkAfficherSolutionLatex();
 		void glpkAfficherSolution();
 		void glpkAfficherModelisation();
 		void glpkSetEntier();

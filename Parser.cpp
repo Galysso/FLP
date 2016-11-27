@@ -26,10 +26,15 @@ void Parser::lecture(Donnees *d, string nomFichier) const {
 		double **coutsAllocation = new double * [N];
 		for (int plant = 0; plant < N; ++plant) {
 			coutsAllocation[plant] = new double [M];
-			for (int client = 0; client < M; ++client) {
+			
+		}
+		
+		for (int client = 0; client < M; ++client) {
+			for (int plant = 0; plant < N; ++plant) {
 				f >> coutsAllocation[plant][client];
 			}
 		}
+		
 		d->setCoutsAllocation(coutsAllocation);
 		
 		// demandes

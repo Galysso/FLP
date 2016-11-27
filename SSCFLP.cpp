@@ -7,7 +7,6 @@
 using namespace std;
 
 SSCFLP::SSCFLP(Donnees *d) {
-	this->entier = false;
 	this->ia = NULL;
 	this->ja = NULL;
 	this->ar = NULL;
@@ -67,10 +66,15 @@ void SSCFLP::glpkModeliserProbleme() {
 	int i, j;
 	int col, client, facil;
 	
+	// M le nombre de clients
+	// N le nombre de facilités
+	// 1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   18
+	// 8	9	 35   60   63   85   0    21   80   44   5    4    65   82   67   329  144  408
+	// Y11, Y12, Y13, Y14, Y15, Y21, Y22, Y23, Y24, Y25, Y31, Y32, Y33, Y34, Y35, X1,  X2,  X3
+	
 	// La demande de chaque client est satisfaite
 	for (i = 1; i <= M; ++i) {
 		client = i-1;
-		
 		//~ cout << "i="<<i<< "\tborne =\tx=1.0" << endl;
 		glp_set_row_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
 		
@@ -78,13 +82,11 @@ void SSCFLP::glpkModeliserProbleme() {
 			facil = j-1;
 			col = i+(j-1)*M;
 			
+			//PUTAIN D'ERREUR DE MERDE GUIGNOUGUIGNOUGUIGNOU
+			
 			//~ cout << "j="<<col<</*"\tborne =\t0<=x<=1 (int)*/"\tcoef="<<d->coutAlloc(facil,client)<< endl;
 			
-			if (this->entier) {
-				glp_set_col_kind(this->prob, col, GLP_BV);
-			} else {
-				glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
-			}
+			glp_set_col_kind(this->prob, col, GLP_BV);
 			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(facil,client));
 			
 			ia[pos] = i;
@@ -130,13 +132,61 @@ void SSCFLP::glpkModeliserProbleme() {
 	
 	// Chargement de la matrice
 	glp_load_matrix(this->prob, taille, ia, ja, ar);
-	//~ glp_write_lp(this->prob, NULL, "SSCFLP");
+	glp_write_lp(this->prob, NULL, "SSCFLP");
 }
 
 void SSCFLP::glpkResoudreProbleme() {
 	glp_simplex(this->prob, NULL);
 	if (this->entier) {
 		glp_intopt(this->prob,NULL);
+	}
+}
+
+/*
+\item Temps de résolution : 15 secondes
+\item Les facilités à construire sont : \{1,4,16,18,21,22,27,28\}
+\item Les liaisons à faire sont :
+\begin{itemize}
+\item (1,\{1,4,22,42,52,53\})
+\item (4,\{7,9,13,21,30,45\})
+\item (16,\{10,11,12,19,28,39,40,43,47,51\})
+\item (18,\{3,20,24,32,44,54,56,59\})
+\item (21,\{8,16,26,41\})
+\item (22,\{14,15,23,29,31,36,37,48,57\})
+\item (27,\{0,6,18,25,33,34,46,49,55\})
+\item (28,\{2,5,17,27,35,38,50,58\})
+\end{itemize}
+\end{itemize}
+ */
+
+void SSCFLP::glpkAfficherSolutionLatex() {
+	int M = this->d->getM();
+	int N = this->d->getN();
+	int i, j, col;
+	
+	double z = glp_mip_obj_val(this->prob);
+	
+	cout << endl << "\\begin{itemize}"<<endl;
+	cout << "\\item Temps de résolution : " << endl;
+	cout << "\\item Valeur de la fonction objectif : " << z << endl;
+	cout << "\\item Les facilités à construire sont : \\{";
+	for (i = M*N+1; i <= M*N+N; ++i) {
+		if (glp_mip_col_val(this->prob, i)) {
+			cout << i-M*N-1 << ",";
+		}
+	}
+	cout << "\\}"<<endl;
+	
+	cout << "\\item Les liaisons à faire sont : \n\\begin{itemize}" << endl;
+	for (int fac = 1; fac <= N; ++fac) {
+		cout << "\\item (" << fac-1 <<",\\{";
+		for (int client = 1; client <= M; ++client) {
+			col = client+(fac-1)*M;
+			if (glp_mip_col_val(this->prob, col) > 0) {
+				cout << client-1 << ",";
+			}
+		}
+		cout << "\\})" << endl;
 	}
 }
 
