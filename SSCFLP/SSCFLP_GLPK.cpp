@@ -1,27 +1,30 @@
 #include <iostream>
-#include "SSCFLP.hpp"
-#include "Donnees.hpp"
+#include "SSCFLP_GLPK.hpp"
+#include "SSCFLP_SOL.hpp"
+#include "../Donnees/Donnees.hpp"
 #include <glpk.h>
 #include <stdlib.h>
+#include <iomanip>
 
 using namespace std;
 
-SSCFLP::SSCFLP(Donnees *d) {
+SSCFLP_GLPK::SSCFLP_GLPK(Donnees *d) {
 	this->ia = NULL;
 	this->ja = NULL;
 	this->ar = NULL;
 	this->prob = NULL;
 	this->d = d;
+	this->entier = true;
 }
 
-SSCFLP::~SSCFLP() {
+SSCFLP_GLPK::~SSCFLP_GLPK() {
 	if (prob != NULL) {
 		glp_delete_prob(prob);
 	}
 }
 
-void SSCFLP::glpkModeliserProbleme() {
-	this->entier = true;
+void SSCFLP_GLPK::glpkModeliserProbleme() {
+	//~ this->entier = true;
 	
 	int M = this->d->getM();
 	int N = this->d->getN();
@@ -65,13 +68,7 @@ void SSCFLP::glpkModeliserProbleme() {
 	int pos = 1;
 	int i, j;
 	int col, client, facil;
-	
-	// M le nombre de clients
-	// N le nombre de facilités
-	// 1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   18
-	// 8	9	 35   60   63   85   0    21   80   44   5    4    65   82   67   329  144  408
-	// Y11, Y12, Y13, Y14, Y15, Y21, Y22, Y23, Y24, Y25, Y31, Y32, Y33, Y34, Y35, X1,  X2,  X3
-	
+		
 	// La demande de chaque client est satisfaite
 	for (i = 1; i <= M; ++i) {
 		client = i-1;
@@ -81,12 +78,12 @@ void SSCFLP::glpkModeliserProbleme() {
 		for (j = 1; j <= N; ++j) {
 			facil = j-1;
 			col = i+(j-1)*M;
-			
-			//PUTAIN D'ERREUR DE MERDE GUIGNOUGUIGNOUGUIGNOU
-			
-			//~ cout << "j="<<col<</*"\tborne =\t0<=x<=1 (int)*/"\tcoef="<<d->coutAlloc(facil,client)<< endl;
-			
-			glp_set_col_kind(this->prob, col, GLP_BV);
+				
+			if (this->entier) {
+				glp_set_col_kind(this->prob, col, GLP_BV);
+			} else {
+				glp_set_col_bnds(this->prob, col, GLP_DB, 0.0, 1.0);
+			}
 			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(facil,client));
 			
 			ia[pos] = i;
@@ -115,8 +112,6 @@ void SSCFLP::glpkModeliserProbleme() {
 		}
 		col = (i-M)+(j-1)*N;
 
-		//~ cout << "j="<<col<</*"\tborne =\t0<=x<=1 (int)*/"\tcoef="<<d->coutOuverture(facil)<< endl;
-
 		//~ glp_set_col_kind(prob, col, GLP_IV);
 		glp_set_col_kind(this->prob, col, GLP_BV);
 		//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
@@ -132,34 +127,15 @@ void SSCFLP::glpkModeliserProbleme() {
 	
 	// Chargement de la matrice
 	glp_load_matrix(this->prob, taille, ia, ja, ar);
-	glp_write_lp(this->prob, NULL, "SSCFLP");
+	glp_write_lp(this->prob, NULL, "modelisation");
 }
 
-void SSCFLP::glpkResoudreProbleme() {
+void SSCFLP_GLPK::glpkResoudreProbleme() {
 	glp_simplex(this->prob, NULL);
-	if (this->entier) {
-		glp_intopt(this->prob,NULL);
-	}
+	glp_intopt(this->prob,NULL);
 }
 
-/*
-\item Temps de résolution : 15 secondes
-\item Les facilités à construire sont : \{1,4,16,18,21,22,27,28\}
-\item Les liaisons à faire sont :
-\begin{itemize}
-\item (1,\{1,4,22,42,52,53\})
-\item (4,\{7,9,13,21,30,45\})
-\item (16,\{10,11,12,19,28,39,40,43,47,51\})
-\item (18,\{3,20,24,32,44,54,56,59\})
-\item (21,\{8,16,26,41\})
-\item (22,\{14,15,23,29,31,36,37,48,57\})
-\item (27,\{0,6,18,25,33,34,46,49,55\})
-\item (28,\{2,5,17,27,35,38,50,58\})
-\end{itemize}
-\end{itemize}
- */
-
-void SSCFLP::glpkAfficherSolutionLatex() {
+void SSCFLP_GLPK::glpkAfficherSolutionLatex() {
 	int M = this->d->getM();
 	int N = this->d->getN();
 	int i, j, col;
@@ -190,10 +166,10 @@ void SSCFLP::glpkAfficherSolutionLatex() {
 	}
 }
 
-void SSCFLP::glpkAfficherSolution() {
+void SSCFLP_GLPK::glpkAfficherSolution() {
 	int M = this->d->getM();
 	int N = this->d->getN();
-	int i;
+	int i, col;
 	
 	double z = glp_mip_obj_val(this->prob);
 	
@@ -201,68 +177,57 @@ void SSCFLP::glpkAfficherSolution() {
 	for (i = M*N+1; i <= M*N+N; ++i) {
 		//~ cout << i << endl;
 		//~ cout << glp_mip_col_val(prob, i) << ";";
-		if (glp_mip_col_val(this->prob, i)) {
+		if (glp_mip_col_val(this->prob, i) == 1) {
 			cout << i-M*N-1 << ",";
 		}
 	}
 	cout << "}"<<endl;
 	
-	cout << "LIAISONS :\n{";
-	for (i = 1; i <= M*N; ++i) {
-		if (glp_mip_col_val(this->prob, i) > 0) {
-			cout <<"{"<<(i-1)/M << "," << (i-1)%M << "},";
+	cout << "LIAISONS :\n";
+	cout << setprecision(2);
+	for (int fac = 1; fac <= N; ++fac) {
+		cout << "("<< fac-1 <<",{";
+		for (int client = 1; client <= M; ++client) {
+			col = client+(fac-1)*M;
+			if (glp_mip_col_val(this->prob, col) > 0) {
+				cout << "(" << client-1 << "," << glp_mip_col_val(this->prob, col) << "),";
+			}
 		}
+		cout << "})" << endl;
 	}
-	cout << "}"<<endl;
-	
-	cout << endl;
+	cout << setprecision(-1);
 	cout << "Z = " << z << endl;
 }
 
-void SSCFLP::glpkAfficherModelisation() {
-	int i, j;
-	int M = this->d->getM();
-	int N = this->d->getN();
-	int taille = M*N+N*(M+1);
-	double tab[1+M+N][1+taille];
-	
-	// TEST TABLEAU ----------------------------------------------------
-	///-----------------------------------------------------------------
-	///-----------------------------------------------------------------
-	for (i = 0; i <= M+N; ++i) {							///---------
-		for (j = 0; j <= M*N+N; ++j) {						///---------
-			tab[i][j] = 0.0;								///---------
-		}													///---------
-	}														///---------
-	for (i = 1; i <= taille; ++i) {							///---------
-		tab[ia[i]][ja[i]] = ar[i];							///---------
-	}														///---------
-	for (i = 0; i <= M*N+N; ++i) {							///---------
-		cout << i << " ";									///---------
-	}														///---------
-	cout << endl;											///---------
-	for (i = 1; i <= M+N; ++i) {							///---------
-		cout << i << " ";									///---------
-		for (j = 1; j <= M*N+N; ++j) {						///---------
-			cout << tab[i][j] << " ";						///---------
-		}													///---------
-		cout << endl;										///---------
-	}														///---------
-	cout << endl;											///---------
-	///-----------------------------------------------------------------
-	///-----------------------------------------------------------------
-	// FIN TEST --------------------------------------------------------
-}
-
-void SSCFLP::glpkSetEntier() {
+void SSCFLP_GLPK::glpkSetEntier() {
 	this->entier = true;
 }
 
-void SSCFLP::glpkSetRelache() {
+void SSCFLP_GLPK::glpkSetRelache() {
 	this->entier = false;
 }
 
-
-void SSCFLP::setDonnees(Donnees *d) {
+void SSCFLP_GLPK::setDonnees(Donnees *d) {
 	this->d = d;
+}
+
+SSCFLP_SOL SSCFLP_GLPK::getSolution() {
+	int N = this->d->getN();
+	int M = this->d->getM();
+	double z = glp_mip_obj_val(this->prob);
+	double *facilites = new double [N];
+	double **liaisons = new double * [N];
+	
+	for (int i = M*N+1; i <= M*N+N; ++i) {
+		facilites[i-M*N-1] = glp_mip_col_val(this->prob, i);
+	}
+	
+	for (int fac = 1; fac <= N; ++fac) {
+		liaisons[fac-1] = new double [M];
+		for (int client = 1; client <= M; ++client) {
+			liaisons[fac-1][client-1] = glp_mip_col_val(this->prob, client+(fac-1)*M);
+		}
+	}
+	
+	return SSCFLP_SOL(N, M, z, facilites, liaisons);
 }

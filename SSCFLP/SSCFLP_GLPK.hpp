@@ -1,10 +1,11 @@
-#ifndef SSCFLP_HPP
-#define SSCFLP_HPP
+#ifndef SSCFLP_GLPK_HPP
+#define SSCFLP_GLPK_HPP
 
-#include "Donnees.hpp"
+#include "../Donnees/Donnees.hpp"
+#include "SSCFLP_SOL.hpp"
 #include <glpk.h>
 
-class SSCFLP {
+class SSCFLP_GLPK {
 	private:
 		bool entier;
 		int *ia;
@@ -14,19 +15,18 @@ class SSCFLP {
 		Donnees *d;
 		
 	public:
-		SSCFLP(Donnees *d);
-		~SSCFLP();
+		SSCFLP_GLPK(Donnees *d);
+		~SSCFLP_GLPK();
 		void resolutionGLPK();
 		void glpkModeliserProbleme();
 		void glpkResoudreProbleme();
 		void glpkAfficherSolutionLatex();
 		void glpkAfficherSolution();
-		void glpkAfficherModelisation();
 		void glpkSetEntier();
 		void glpkSetRelache();
 		void glpkDelete();
-		
 		void setDonnees(Donnees *d);
+		SSCFLP_SOL getSolution();
 };
 
-#endif //SSCFLP_HPP
+#endif //SSCFLP_GLPK_HPP

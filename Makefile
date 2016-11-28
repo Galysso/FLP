@@ -1,5 +1,5 @@
 CC = g++
-SOURCES = Parser.cpp Donnees.cpp SSCFLP.cpp
+SOURCES = Donnees/Parser.cpp Donnees/Donnees.cpp SSCFLP/SSCFLP_SOL.cpp SSCFLP/SSCFLP_GLPK.cpp SSCFLP/SSCFLP_HEUR.cpp
 CFLAGS = -Wall -g -O3
 LDFLAGS = -lm -lglpk
 .PHONY = clean
