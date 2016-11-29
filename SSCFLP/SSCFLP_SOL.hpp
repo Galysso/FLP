@@ -12,6 +12,7 @@ class SSCFLP_SOL {
 	public:
 		SSCFLP_SOL();
 		SSCFLP_SOL(int N, int M, double z, double *facilites, double **liaisons);
+		~SSCFLP_SOL();
 		int getN();
 		int getM();
 		double getZ();
@@ -21,7 +22,7 @@ class SSCFLP_SOL {
 		int setM(int M);
 		double setZ(double z);
 		double *setFacilites(double *facilites);
-		double **setLiaisons(double **facilites);
+		double **setLiaisons(double **liaisons);
 		void afficherSol();
 };
 

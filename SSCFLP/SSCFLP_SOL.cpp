@@ -4,7 +4,13 @@
 
 using namespace std;
 
-SSCFLP_SOL::SSCFLP_SOL() {};
+SSCFLP_SOL::SSCFLP_SOL() {
+	this->N = 0;
+	this->M = 0;
+	this->z = 0;
+	this->facilites = NULL;
+	this->liaisons = NULL;
+};
 
 SSCFLP_SOL::SSCFLP_SOL(int N, int M, double z, double *facilites, double **liaisons) {
 	this->N = N;
@@ -12,6 +18,18 @@ SSCFLP_SOL::SSCFLP_SOL(int N, int M, double z, double *facilites, double **liais
 	this->z = z;
 	this->facilites = facilites;
 	this->liaisons = liaisons;
+}
+
+SSCFLP_SOL::~SSCFLP_SOL() {
+	if (this->facilites != NULL) {
+		delete this->facilites;
+	}
+	if (this->liaisons != NULL) {
+		for (int i = 0; i < this->N; ++i) {
+			delete liaisons[i];
+		}
+		delete liaisons;
+	}
 }
 
 int SSCFLP_SOL::getN() {
@@ -47,10 +65,19 @@ double SSCFLP_SOL::setZ(double z) {
 }
 
 double *SSCFLP_SOL::setFacilites(double *facilites) {
+	if (this->facilites != NULL) {
+		delete this->facilites;
+	}
 	this->facilites = facilites;
 }
 
-double **SSCFLP_SOL::setLiaisons(double **facilites) {
+double **SSCFLP_SOL::setLiaisons(double **liaisons) {
+	if (this->liaisons != NULL) {
+		for (int i = 0; i < this->N; ++i) {
+			delete liaisons[i];
+		}
+		delete liaisons;
+	}
 	this->liaisons = liaisons;
 }
 
