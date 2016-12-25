@@ -5,6 +5,9 @@
 #include "SSCFLP_SOL.hpp"
 #include <glpk.h>
 
+#define MAX_SIZE 10000
+#define delta 0.000001
+
 class SSCFLP_GLPK {
 	private:
 		bool entier;
@@ -13,6 +16,7 @@ class SSCFLP_GLPK {
 		double *ar;
 		glp_prob *prob;
 		Donnees *d;
+		int nbRow;
 		
 	public:
 		SSCFLP_GLPK(Donnees *d);
@@ -26,9 +30,15 @@ class SSCFLP_GLPK {
 		void glpkSetRelache();
 		void glpkDelete();
 		void setDonnees(Donnees *d);
-		void addConstraint();
 		SSCFLP_SOL getSolution();
 		double getZ();
+		
+	// Pour le branch and bound
+		int getColLink(int i, int j) const;
+		int getColFac(int i) const;
+		int getColLinkNearestToOne() const;
+		void setLinkToOne(int i);
+		void setLinkToZero(int i);
 };
 
 #endif //SSCFLP_GLPK_HPP

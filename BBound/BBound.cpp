@@ -27,8 +27,29 @@ BBound::BBound(Donnees *d) {
 	
 	// Borne primale
 	this->bornePrimale = bestSol->getZ();
+	
+	modelisation->glpkAfficherSolution();
+	
+	cout << "colonne la plus proche de 1 : " << modelisation->getColLinkNearestToOne() << endl;
 }
 
 /// TODO : fonction		d'ajout d'une contrainte
 					/// de retrait de la dernière contrainte
 					/// condition d'arrêt d'exploration d'une branche
+
+
+void BBound::testP1() {
+	this->modelisation->glpkModeliserProbleme();
+	this->modelisation->setLinkToOne(22);
+	this->modelisation->setLinkToOne(23);
+	this->modelisation->setLinkToOne(15);
+	this->modelisation->setLinkToOne(180);
+	this->modelisation->setLinkToOne(137);
+	this->modelisation->setLinkToOne(127);
+	this->modelisation->setLinkToOne(72);
+	
+	//modelisation->glpkModeliserProbleme();
+	modelisation->glpkResoudreProbleme();
+	modelisation->glpkAfficherSolution();
+	cout << "colonne la plus proche de 1 : " << modelisation->getColLinkNearestToOne() << endl;
+}

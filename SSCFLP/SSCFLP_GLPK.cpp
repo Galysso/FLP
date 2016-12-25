@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <string>
 #include "SSCFLP_GLPK.hpp"
 #include "SSCFLP_SOL.hpp"
 #include "../Donnees/Donnees.hpp"
@@ -15,6 +17,7 @@ SSCFLP_GLPK::SSCFLP_GLPK(Donnees *d) {
 	this->prob = NULL;
 	this->d = d;
 	this->entier = true;
+	this->nbRow = this->d->getM() + this->d->getN();
 }
 
 SSCFLP_GLPK::~SSCFLP_GLPK() {
@@ -25,6 +28,7 @@ SSCFLP_GLPK::~SSCFLP_GLPK() {
 
 void SSCFLP_GLPK::glpkModeliserProbleme() {
 	//~ this->entier = true;
+	stringstream colName;
 	
 	int M = this->d->getM();
 	int N = this->d->getN();
@@ -48,45 +52,45 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 	glp_add_cols(this->prob, M*N+N);
 	
 	int taille = M*N+N*(M+1);
-	double tab[1+M+N][1+taille];
 	
 	if (this->ia != NULL) {
 		delete [] this->ia;
 	}
-	this->ia = new int [1+taille];
+	this->ia = new int [MAX_SIZE];//[1+taille];
 	
 	if (this->ja != NULL) {
 		delete [] this->ja;
 	}
-	this->ja = new int [1+taille];
+	this->ja = new int [MAX_SIZE];//[1+taille];
 	
 	if (this->ar != NULL) {
 		delete [] this->ar;
 	}
-	this->ar = new double [1+taille];
+	this->ar = new double [MAX_SIZE];//[1+taille];
 	
 	int pos = 1;
 	int i, j;
 	int col, client, facil;
 		
 	// La demande de chaque client est satisfaite
-	for (i = 1; i <= M; ++i) {
-		client = i-1;
-		//~ cout << "i="<<i<< "\tborne =\tx=1.0" << endl;
-		glp_set_row_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
+	for (i = 0; i < M; ++i) {
+		glp_set_row_bnds(this->prob, i+1, GLP_FX, 1.0, 1.0);
 		
-		for (j = 1; j <= N; ++j) {
-			facil = j-1;
-			col = i+(j-1)*M;
-				
+		for (j = 0; j < N; ++j) {
+			col = getColLink(j, i);
+			
+			colName.str("");
+			colName << "X" << j << "," << i;
+			glp_set_col_name(this->prob, col, colName.str().c_str());
+			
 			if (this->entier) {
 				glp_set_col_kind(this->prob, col, GLP_BV);
 			} else {
 				glp_set_col_bnds(this->prob, col, GLP_DB, 0.0, 1.0);
 			}
-			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(facil,client));
+			glp_set_obj_coef(this->prob, col, this->d->coutAlloc(j,i));
 			
-			ia[pos] = i;
+			ia[pos] = i+1;
 			ja[pos] = col;
 			ar[pos] = 1;
 			
@@ -95,32 +99,29 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 	}
 	
 	// Aucune facilité ne fournit plus qu'elle n'a de capacité
-	for (i = M+1; i <= M+N; ++i) {
-		facil = i-M-1;
-		
-		//~ cout << "i="<<i<< "\tborne =\tx<=0" << endl;
-		glp_set_row_bnds(this->prob, i, GLP_UP, 0.0, 0.0);
-		
-		for (j = 1; j <= M; ++j) {
-			client = j-1;
-			col = (i-1-M)*M+j;//j+(i-M-1)*(M+1);
+	for (i = 0; i < N; ++i) {		
+		for (j = 0; j < M; ++j) {
+			col = getColLink(i, j);
 			
-			this->ia[pos] = i;
+			this->ia[pos] = M+i+1;
 			this->ja[pos] = col;
-			this->ar[pos] = d->demande(client);
+			this->ar[pos] = d->demande(j);
 			++pos;
 		}
-		col = (i-M)+(j-1)*N;
-
-		//~ glp_set_col_kind(prob, col, GLP_IV);
-		glp_set_col_kind(this->prob, col, GLP_BV);
-		//~ glp_set_col_bnds(prob, col, GLP_DB, 0.0, 1.0);
-			
-		glp_set_obj_coef(this->prob, col, this->d->coutOuverture(facil));
 		
-		this->ia[pos] = i;
+		glp_set_row_bnds(this->prob, M+i+1, GLP_UP, 0.0, 0.0);
+		
+		col = getColFac(i);
+		colName.str("");
+		colName << "Y" << i;
+		
+		glp_set_col_kind(this->prob, col, GLP_BV);
+		glp_set_col_name(this->prob, col, colName.str().c_str());
+		glp_set_obj_coef(this->prob, col, this->d->coutOuverture(i));
+				
+		this->ia[pos] = M+i+1;
 		this->ja[pos] = col;
-		this->ar[pos] = -d->capacite(facil);
+		this->ar[pos] = -d->capacite(i);
 		
 		++pos;
 	}
@@ -132,7 +133,8 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 
 void SSCFLP_GLPK::glpkResoudreProbleme() {
 	glp_simplex(this->prob, NULL);
-	glp_intopt(this->prob,NULL);
+	glp_intopt(this->prob, NULL);
+	cout << glp_get_col_name(this->prob, 22) << " = " << glp_mip_col_val(this->prob, 22) << endl;
 }
 
 void SSCFLP_GLPK::glpkAfficherSolutionLatex() {
@@ -174,23 +176,23 @@ void SSCFLP_GLPK::glpkAfficherSolution() {
 	double z = glp_mip_obj_val(this->prob);
 	
 	cout << "FACILITES :\n{";
-	for (i = M*N+1; i <= M*N+N; ++i) {
-		//~ cout << i << endl;
-		//~ cout << glp_mip_col_val(prob, i) << ";";
-		if (glp_mip_col_val(this->prob, i) == 1) {
-			cout << i-M*N-1 << ",";
+	for (i = 0; i < N; ++i) {
+		col = getColFac(i);
+		if (glp_mip_col_val(this->prob, col) == 1) {
+			cout << i << ",";
 		}
 	}
 	cout << "}"<<endl;
 	
 	cout << "LIAISONS :\n";
 	cout << setprecision(2);
-	for (int fac = 1; fac <= N; ++fac) {
-		cout << "("<< fac-1 <<",{";
-		for (int client = 1; client <= M; ++client) {
-			col = client+(fac-1)*M;
+	for (int fac = 0; fac < N; ++fac) {
+		cout << "("<< fac <<",{";
+		for (int client = 0; client < M; ++client) {
+			col = getColLink(fac, client);
+			//~ cout << "col=" << col << endl;
 			if (glp_mip_col_val(this->prob, col) > 0) {
-				cout << "(" << client-1 << "," << glp_mip_col_val(this->prob, col) << "),";
+				cout << "(" << client << "," << glp_mip_col_val(this->prob, col) << "),";
 			}
 		}
 		cout << "})" << endl;
@@ -235,3 +237,62 @@ SSCFLP_SOL SSCFLP_GLPK::getSolution() {
 double SSCFLP_GLPK::getZ() {
 	return glp_mip_obj_val(this->prob);
 }
+
+int SSCFLP_GLPK::getColLink(int indFacil, int indClient) const {
+	return indClient + indFacil*this->d->getM() + 1;
+}
+
+int SSCFLP_GLPK::getColFac(int indFacil) const {
+	return (this->d->getM()*this->d->getN()) + indFacil + 1;
+}
+
+/// Renvoie l'indice de la facilité qui doit être mise à 1
+int SSCFLP_GLPK::getColLinkNearestToOne() const {
+	double max = 0;
+	int indMax = -1;
+	int N = this->d->getN();
+	int M = this->d->getM();
+	int col;
+	double val;
+	
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < M; ++j) {
+			col = getColLink(i, j);
+			val = glp_mip_col_val(this->prob, col);
+			
+			if ((val+delta < 1) && (val-delta > 0) && (val > max)) {
+				max = val;
+				indMax = col;
+			}
+		}
+	}
+		
+	return indMax;
+}
+
+void SSCFLP_GLPK::setLinkToOne(int i) {
+	int M = this->d->getM();
+	int N = this->d->getN();
+	
+	glp_set_col_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
+	glp_load_matrix(this->prob, M*N+N*(M+1), ia, ja, ar);
+	glp_write_lp(this->prob, NULL, "modelisation");
+}
+
+void SSCFLP_GLPK::setLinkToZero(int i) {
+	
+}
+
+	// TODO :
+	/*
+	 * Déterminer si c'est une contrainte de liaison ou d'ouverture de facilité
+	 * Déterminer l'emplacement de LA variable
+	 * Penser à la suppression, comment savoir quelle variable a été fixée lors du retour arrière ?
+	 */
+
+
+
+
+
+
+

@@ -18,6 +18,7 @@ class BBound {
 		
 	public :
 		BBound(Donnees *d);
+		void testP1();
 };
 
 #endif //BBOUND_HPP

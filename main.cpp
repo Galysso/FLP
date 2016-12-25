@@ -19,8 +19,8 @@ int main(int argc, char* argv[]) {
 	clock_t debut, fin;
 	
 	//~ Donnees d("datas/test.dat");
-	//~ Donnees d("datas/20x10_1.dat");
-	Donnees d("datas/20x10_2.dat");
+	Donnees d("datas/20x10_1.dat");
+	//~ Donnees d("datas/20x10_2.dat");
 	//~ Donnees d("datas/20x10_3.dat");
 	//~ Donnees d("datas/20x10_4.dat");
 	//~ Donnees d("datas/30x15_1.dat");
@@ -31,6 +31,7 @@ int main(int argc, char* argv[]) {
 	//~ Donnees d("datas/75x30.dat");
 	
 	BBound bbound(&d);
-
+	bbound.testP1();
+	
 	return 0;
 }
