@@ -231,3 +231,7 @@ SSCFLP_SOL SSCFLP_GLPK::getSolution() {
 	
 	return SSCFLP_SOL(N, M, z, facilites, liaisons);
 }
+
+double SSCFLP_GLPK::getZ() {
+	return glp_mip_obj_val(this->prob);
+}

@@ -66,6 +66,10 @@ SSCFLP_SOL SSCFLP_HEUR::getSolution() {
 	return SSCFLP_SOL(N, M, this->z, facilites, liaisons);
 }
 
+double SSCFLP_HEUR::getZ() {
+	return this->z;
+}
+
 void SSCFLP_HEUR::initialisation() {
 	int i, j, N, M;
 	double min, tmp, somme;

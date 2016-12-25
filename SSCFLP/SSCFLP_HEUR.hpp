@@ -29,6 +29,7 @@ class SSCFLP_HEUR {
 	public:
 		SSCFLP_HEUR(Donnees *d);
 		SSCFLP_SOL getSolution();
+		double getZ();
 		
 		void afficherDeltas();
 		void afficherEfficacites();

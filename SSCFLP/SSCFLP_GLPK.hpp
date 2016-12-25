@@ -26,7 +26,9 @@ class SSCFLP_GLPK {
 		void glpkSetRelache();
 		void glpkDelete();
 		void setDonnees(Donnees *d);
+		void addConstraint();
 		SSCFLP_SOL getSolution();
+		double getZ();
 };
 
 #endif //SSCFLP_GLPK_HPP

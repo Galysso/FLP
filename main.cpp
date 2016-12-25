@@ -5,6 +5,13 @@
 #include "SSCFLP/SSCFLP_GLPK.hpp"
 #include "SSCFLP/SSCFLP_SOL.hpp"
 #include "SSCFLP/SSCFLP_HEUR.hpp"
+#include "BBound/BBound.hpp"
+
+/**
+ * UFLP   : Facilities can satisfy de whole demand of every clients
+ * CFLP   : Clients can be linked to multiple facilities
+ * SSCFLP : Clients can be linked to one and only one facility
+ */
 
 using namespace std;
 
@@ -23,24 +30,7 @@ int main(int argc, char* argv[]) {
 	//~ Donnees d("datas/60x30.dat");
 	//~ Donnees d("datas/75x30.dat");
 	
-	//~ d.afficherCoutsAllocation();
-	//~ d.afficherDemandes();
-	//~ d.afficherCoutsOuverture();
-	//~ d.afficherCapacites();
-	
-	SSCFLP_GLPK sscflp_glpk(&d);
-	sscflp_glpk.glpkSetRelache();
-	sscflp_glpk.glpkModeliserProbleme();
-	debut = clock(); sscflp_glpk.glpkResoudreProbleme(); fin = clock();
-	//~ sscflp_glpk.glpkAfficherSolution();
-	SSCFLP_SOL sol_glpk = sscflp_glpk.getSolution();
-	//~ sol.afficherSol();
-	//~ cout << "Résolution en " << (fin-debut)*1000/CLOCKS_PER_SEC << " millisecondes" << endl << endl;
-
-	SSCFLP_HEUR sscflp_heur(&d);
-	SSCFLP_SOL sol_heur = sscflp_heur.getSolution();
-	sol_heur.afficherSol();
-	sol_glpk.afficherSol();
+	BBound bbound(&d);
 
 	return 0;
 }
