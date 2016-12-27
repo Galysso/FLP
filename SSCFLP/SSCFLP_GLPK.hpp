@@ -1,11 +1,11 @@
 #ifndef SSCFLP_GLPK_HPP
 #define SSCFLP_GLPK_HPP
 
+#include <glpk.h>
+#include <vector>
 #include "../Donnees/Donnees.hpp"
 #include "SSCFLP_SOL.hpp"
-#include <glpk.h>
 
-#define MAX_SIZE 10000
 #define delta 0.000001
 
 class SSCFLP_GLPK {
@@ -39,6 +39,10 @@ class SSCFLP_GLPK {
 		int getColLinkNearestToOne() const;
 		void setLinkToOne(int i);
 		void setLinkToZero(int i);
+		void setLinkToFree(int i);
+		std::vector<int> getColsToConstraint();
+		bool isSetToOne(int i);
+		bool isSetToZero(int i);
 };
 
 #endif //SSCFLP_GLPK_HPP

@@ -1,12 +1,13 @@
 #include <iostream>
-#include <sstream>
-#include <string>
-#include "SSCFLP_GLPK.hpp"
-#include "SSCFLP_SOL.hpp"
-#include "../Donnees/Donnees.hpp"
 #include <glpk.h>
 #include <stdlib.h>
 #include <iomanip>
+#include <sstream>
+#include <string>
+#include <vector>
+#include "SSCFLP_GLPK.hpp"
+#include "SSCFLP_SOL.hpp"
+#include "../Donnees/Donnees.hpp"
 
 using namespace std;
 
@@ -56,17 +57,17 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 	if (this->ia != NULL) {
 		delete [] this->ia;
 	}
-	this->ia = new int [MAX_SIZE];//[1+taille];
+	this->ia = new int [1+taille];
 	
 	if (this->ja != NULL) {
 		delete [] this->ja;
 	}
-	this->ja = new int [MAX_SIZE];//[1+taille];
+	this->ja = new int [1+taille];
 	
 	if (this->ar != NULL) {
 		delete [] this->ar;
 	}
-	this->ar = new double [MAX_SIZE];//[1+taille];
+	this->ar = new double [1+taille];
 	
 	int pos = 1;
 	int i, j;
@@ -134,7 +135,6 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 void SSCFLP_GLPK::glpkResoudreProbleme() {
 	glp_simplex(this->prob, NULL);
 	glp_intopt(this->prob, NULL);
-	cout << glp_get_col_name(this->prob, 22) << " = " << glp_mip_col_val(this->prob, 22) << endl;
 }
 
 void SSCFLP_GLPK::glpkAfficherSolutionLatex() {
@@ -178,7 +178,7 @@ void SSCFLP_GLPK::glpkAfficherSolution() {
 	cout << "FACILITES :\n{";
 	for (i = 0; i < N; ++i) {
 		col = getColFac(i);
-		if (glp_mip_col_val(this->prob, col) == 1) {
+		if (glp_mip_col_val(this->prob, col) > 1-delta) {
 			cout << i << ",";
 		}
 	}
@@ -191,7 +191,7 @@ void SSCFLP_GLPK::glpkAfficherSolution() {
 		for (int client = 0; client < M; ++client) {
 			col = getColLink(fac, client);
 			//~ cout << "col=" << col << endl;
-			if (glp_mip_col_val(this->prob, col) > 0) {
+			if (glp_mip_col_val(this->prob, col) > 0+delta) {
 				cout << "(" << client << "," << glp_mip_col_val(this->prob, col) << "),";
 			}
 		}
@@ -271,16 +271,88 @@ int SSCFLP_GLPK::getColLinkNearestToOne() const {
 }
 
 void SSCFLP_GLPK::setLinkToOne(int i) {
-	int M = this->d->getM();
-	int N = this->d->getN();
-	
 	glp_set_col_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
-	glp_load_matrix(this->prob, M*N+N*(M+1), ia, ja, ar);
-	glp_write_lp(this->prob, NULL, "modelisation");
 }
 
 void SSCFLP_GLPK::setLinkToZero(int i) {
+	glp_set_col_bnds(this->prob, i, GLP_FX, 0.0, 0.0);
+}
+
+void SSCFLP_GLPK::setLinkToFree(int i) {
+	glp_set_col_bnds(this->prob, i, GLP_DB, 0.0, 1.0);
+}
+
+//~ vector<int> SSCFLP_GLPK::getColsToConstraint() {
+	//~ vector<int> res;
+//~ 
+	//~ int N = this->d->getN();
+	//~ int M = this->d->getM();
+	//~ int col;
+	//~ double val;
+	//~ 
+	//~ for (int i = 0; i < N; ++i) {
+		//~ for (int j = 0; j < M; ++j) {
+			//~ col = getColLink(i, j);
+			//~ val = glp_mip_col_val(this->prob, col);
+			//~ 
+			//~ if ((val+delta < 1) && (val-delta > 0)) {
+				//~ res.push_back(col);
+			//~ }
+		//~ }
+	//~ }
+	//~ 
+	//~ if (res.size() == 0) {
+		//~ res.push_back(-1);
+	//~ }
+	//~ 
+	//~ return res;
+//~ }
+
+vector<int> SSCFLP_GLPK::getColsToConstraint() {
+	vector<int> res;
+
+	int N = this->d->getN();
+	int M = this->d->getM();
+	int col;
+	double val;
 	
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < M; ++j) {
+			col = getColLink(i, j);
+			val = glp_mip_col_val(this->prob, col);
+			
+			if ((val+delta < 1) && (val-delta > 0)) {
+				res.push_back(col);
+			}
+		}
+	}
+	
+	if (res.size() == 0) {
+		res.push_back(-1);
+	} else {
+		bool trie;
+		do {
+			trie = true;
+			for (int i = 1; i < res.size(); ++i) {
+				if (glp_mip_col_val(this->prob, res.at(i-1)) < glp_mip_col_val(this->prob, res.at(i))) {
+					val = res.at(i-1);
+					res.at(i-1) = res.at(i);
+					res.at(i) = val;
+					trie = false;
+				}
+			}
+		} while (!trie);
+	}
+	
+	return res;
+}
+
+bool SSCFLP_GLPK::isSetToOne(int i) {
+	return (glp_get_col_lb(this->prob, i) == 1.0);
+}
+
+bool SSCFLP_GLPK::isSetToZero(int i) {
+	return (glp_get_col_ub(this->prob, i) == 0.0);
 }
 
 	// TODO :

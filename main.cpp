@@ -19,19 +19,22 @@ int main(int argc, char* argv[]) {
 	clock_t debut, fin;
 	
 	//~ Donnees d("datas/test.dat");
-	Donnees d("datas/20x10_1.dat");
+	//~ Donnees d("datas/20x10_1.dat");
 	//~ Donnees d("datas/20x10_2.dat");
 	//~ Donnees d("datas/20x10_3.dat");
-	//~ Donnees d("datas/20x10_4.dat");
+	Donnees d("datas/20x10_4.dat");
 	//~ Donnees d("datas/30x15_1.dat");
 	//~ Donnees d("datas/30x15_2.dat");
-	//~ Donnees d("datas/40x20.dat");
+	//~ Donnees d("datas/40x20.dat");		// valeur optimale trouvée une fois
 	//~ Donnees d("datas/50x20.dat");
 	//~ Donnees d("datas/60x30.dat");
 	//~ Donnees d("datas/75x30.dat");
-	
+		
 	BBound bbound(&d);
-	bbound.testP1();
-	
+	//~ bbound.testP1();
+	debut = clock();
+	bbound.search();
+	fin = clock();	
+	cout << "temps : " << (fin-debut)/CLOCKS_PER_SEC << "s" << endl;
 	return 0;
 }

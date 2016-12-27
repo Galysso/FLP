@@ -10,7 +10,7 @@ SSCFLP_SOL::SSCFLP_SOL() {
 	this->z = 0;
 	this->facilites = NULL;
 	this->liaisons = NULL;
-};
+}
 
 SSCFLP_SOL::SSCFLP_SOL(int N, int M, double z, double *facilites, double **liaisons) {
 	this->N = N;
@@ -22,13 +22,13 @@ SSCFLP_SOL::SSCFLP_SOL(int N, int M, double z, double *facilites, double **liais
 
 SSCFLP_SOL::~SSCFLP_SOL() {
 	if (this->facilites != NULL) {
-		delete this->facilites;
+		//~ delete this->facilites;
 	}
 	if (this->liaisons != NULL) {
 		for (int i = 0; i < this->N; ++i) {
-			delete liaisons[i];
+			//~ delete liaisons[i];
 		}
-		delete liaisons;
+		//~ delete liaisons;
 	}
 }
 
