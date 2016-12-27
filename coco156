@@ -1,0 +1,2012 @@
+Writing problem data to 'modelisation'...
+343 lines were written
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+      0: obj =   0.000000000e+00  infeas =  2.000e+01 (20)
+*    55: obj =   3.039512175e+03  infeas =  1.692e-16 (0)
+*   117: obj =   1.793456911e+03  infeas =  1.972e-31 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   117: mip =     not found yet >=              -inf        (1; 0)
++   127: >>>>>   1.810857143e+03 >=   1.810457298e+03 < 0.1% (8; 0)
++   128: mip =   1.810857143e+03 >=     tree is empty   0.0% (0; 15)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(1,0.056),(11,0.19),(12,1),(18,1),})
+(1,{(1,0.94),(2,1),(14,1),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.33),(7,1),(11,0.48),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.67),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 1810.86
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(1,0.056),(11,0.19),(12,1),(18,1),})
+(1,{(1,0.94),(2,1),(14,1),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.33),(7,1),(11,0.48),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.67),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 1810.86
+COL = 22
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    128: obj =   1.793456911e+03  infeas =  5.556e-02 (1)
+*   129: obj =   1.793734689e+03  infeas =  0.000e+00 (1)
+*   130: obj =   1.793734689e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   130: mip =     not found yet >=              -inf        (1; 0)
++   139: >>>>>   1.811134921e+03 >=   1.805556854e+03   0.3% (7; 0)
++   140: mip =   1.811134921e+03 >=     tree is empty   0.0% (0; 13)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(2,0.056),(11,0.19),(12,1),(18,1),})
+(1,{(1,1),(2,0.94),(14,1),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.33),(7,1),(11,0.48),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.67),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 1811.13
+COL = 23
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    140: obj =   1.793734689e+03  infeas =  5.556e-02 (1)
+*   141: obj =   1.794803065e+03  infeas =  0.000e+00 (1)
+*   143: obj =   1.793965255e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   143: mip =     not found yet >=              -inf        (1; 0)
++   153: >>>>>   1.812203297e+03 >=   1.810709435e+03 < 0.1% (7; 0)
++   154: mip =   1.812203297e+03 >=     tree is empty   0.0% (0; 13)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(11,0.19),(12,1),(14,0.077),(18,1),})
+(1,{(1,1),(2,1),(14,0.92),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.33),(7,1),(11,0.48),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.67),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 1812.2
+COL = 35
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    154: obj =   1.793965255e+03  infeas =  7.692e-02 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(11,0.19),(12,1),(14,0.077),(18,1),})
+(1,{(1,1),(2,1),(14,0.92),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.33),(7,1),(11,0.48),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.67),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 0
+COL = 35
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    154: obj =   1.793965255e+03  infeas =  9.231e-01 (1)
+*   155: obj =   1.836980640e+03  infeas =  0.000e+00 (0)
+*   158: obj =   1.807911540e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   158: mip =     not found yet >=              -inf        (1; 0)
++   170: >>>>>   1.833216728e+03 >=   1.823639251e+03   0.5% (6; 0)
++   184: mip =   1.833216728e+03 >=     tree is empty   0.0% (0; 11)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(13,1),(19,0.29),})
+(5,{})
+(6,{(6,0.44),(7,1),(11,0.38),(16,1),})
+(7,{(4,1),(5,1),(19,0.071),})
+(8,{(6,0.56),(9,1),(17,1),(19,0.64),})
+(9,{})
+Z = 1833.22
+COL = 180
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    184: obj =   1.807911540e+03  infeas =  7.143e-02 (1)
+*   185: obj =   1.813046625e+03  infeas =  0.000e+00 (1)
+*   188: obj =   1.808785277e+03  infeas =  1.541e-32 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   188: mip =     not found yet >=              -inf        (1; 0)
++   199: >>>>>   1.836419469e+03 >=   1.827046899e+03   0.5% (6; 0)
++   209: mip =   1.836419469e+03 >=     tree is empty   0.0% (0; 11)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,0.73),(11,0.62),(15,1),})
+(4,{(3,1),(8,1),(10,0.27),(13,1),})
+(5,{})
+(6,{(6,0.89),(7,1),(11,0.095),(16,0.91),})
+(7,{(4,1),(5,1),(16,0.091),})
+(8,{(6,0.11),(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1836.42
+COL = 137
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    209: obj =   1.808785277e+03  infeas =  9.091e-02 (1)
+*   210: obj =   1.813046625e+03  infeas =  1.110e-16 (1)
+*   212: obj =   1.809706567e+03  infeas =  4.758e-17 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   212: mip =     not found yet >=              -inf        (1; 0)
++   249: >>>>>   2.094161986e+03 >=   1.823269767e+03  12.9% (6; 0)
++   255: >>>>>   1.837250638e+03 >=   1.829481461e+03   0.4% (9; 1)
++   257: mip =   1.837250638e+03 >=     tree is empty   0.0% (0; 19)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,0.64),(11,0.71),(15,1),})
+(4,{(3,1),(8,1),(10,0.36),(13,1),})
+(5,{})
+(6,{(6,0.89),(7,1),(16,1),})
+(7,{(4,1),(5,1),})
+(8,{(6,0.11),(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1837.25
+COL = 127
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    257: obj =   1.809706567e+03  infeas =  1.111e-01 (1)
+*   262: obj =   1.812525281e+03  infeas =  0.000e+00 (1)
+*   270: obj =   1.810778976e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   270: mip =     not found yet >=              -inf        (1; 0)
++   318: >>>>>   1.880695462e+03 >=   1.825706442e+03   2.9% (8; 2)
++   326: >>>>>   1.837753562e+03 >=   1.837753562e+03   0.0% (4; 8)
++   326: mip =   1.837753562e+03 >=     tree is empty   0.0% (0; 19)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,0.64),(11,0.71),(15,1),})
+(4,{(3,1),(8,1),(10,0.36),(13,1),})
+(5,{})
+(6,{(6,1),(7,0.89),(16,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1837.75
+COL = 128
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    326: obj =   1.810778976e+03  infeas =  1.053e-01 (1)
+    328: obj =   1.810778976e+03  infeas =  1.053e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,0.64),(11,0.71),(15,1),})
+(4,{(3,1),(8,1),(10,0.36),(13,1),})
+(5,{})
+(6,{(6,1),(7,0.89),(16,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 0
+COL = 128
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    328: obj =   1.810778976e+03  infeas =  8.947e-01 (1)
+*   330: obj =   1.845769726e+03  infeas =  0.000e+00 (0)
+*   337: obj =   1.814061623e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   337: mip =     not found yet >=              -inf        (1; 0)
++   444: >>>>>   2.192673993e+03 >=   1.853213691e+03  15.5% (9; 3)
++   500: >>>>>   2.182861752e+03 >=   1.853591823e+03  15.1% (9; 6)
++   502: >>>>>   1.857888278e+03 >=   1.857888278e+03   0.0% (9; 7)
++   502: mip =   1.857888278e+03 >=     tree is empty   0.0% (0; 29)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(5,0.38),(8,1),(13,1),})
+(5,{})
+(6,{(4,0.35),(6,1),(11,0.38),(16,1),})
+(7,{(4,0.65),(5,0.62),(7,1),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1857.89
+COL = 145
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+*   502: obj =   1.814061623e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   502: mip =     not found yet >=              -inf        (1; 0)
++   568: >>>>>   1.882557441e+03 >=   1.853213691e+03   1.6% (7; 3)
++   574: >>>>>   1.857970696e+03 >=   1.857970696e+03 < 0.1% (2; 11)
++   574: mip =   1.857970696e+03 >=     tree is empty   0.0% (0; 19)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,0.54),(14,1),(18,1),})
+(1,{(1,1),(2,1),(11,0.29),(12,0.46),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(5,0.38),(8,1),(13,1),})
+(5,{})
+(6,{(5,0.43),(6,1),(11,0.38),(16,1),})
+(7,{(4,1),(5,0.19),(7,1),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1857.97
+COL = 13
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    574: obj =   1.814061623e+03  infeas =  9.231e-01 (1)
+*   575: obj =   1.843130724e+03  infeas =  0.000e+00 (0)
+*   579: obj =   1.829841825e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   579: mip =     not found yet >=              -inf        (1; 0)
++   595: >>>>>   1.859245421e+03 >=   1.841817203e+03   0.9% (4; 0)
++   606: mip =   1.859245421e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(11,0.57),})
+(2,{})
+(3,{(10,1),(11,0.048),(14,0.46),(15,1),})
+(4,{(3,1),(5,0.38),(8,1),(13,1),})
+(5,{})
+(6,{(5,0.43),(6,1),(11,0.38),(16,1),})
+(7,{(4,1),(5,0.19),(7,1),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 1859.25
+COL = 32
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    606: obj =   1.829841825e+03  infeas =  4.286e-01 (1)
+    607: obj =   1.829841825e+03  infeas =  4.286e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(11,0.57),})
+(2,{})
+(3,{(10,1),(11,0.048),(14,0.46),(15,1),})
+(4,{(3,1),(5,0.38),(8,1),(13,1),})
+(5,{})
+(6,{(5,0.43),(6,1),(11,0.38),(16,1),})
+(7,{(4,1),(5,0.19),(7,1),})
+(8,{(9,1),(17,1),(19,1),})
+(9,{})
+Z = 0
+COL = 32
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    607: obj =   1.829841825e+03  infeas =  5.714e-01 (1)
+*   610: obj =   1.848908501e+03  infeas =  0.000e+00 (0)
+*   614: obj =   1.833548803e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   614: mip =     not found yet >=              -inf        (1; 0)
++   635: >>>>>   1.864913841e+03 >=   1.851052085e+03   0.7% (4; 0)
++   652: mip =   1.864913841e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,0.95),(11,0.19),(14,0.31),(15,1),})
+(4,{(3,1),(5,0.33),(8,1),(10,0.045),(13,1),})
+(5,{})
+(6,{(6,1),(11,0.81),(16,1),})
+(7,{(4,1),(5,0.67),(7,0.47),})
+(8,{(9,1),(14,0.15),(17,1),(19,1),})
+(9,{})
+Z = 1864.91
+COL = 71
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+*   652: obj =   1.833548803e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   652: mip =     not found yet >=              -inf        (1; 0)
++   669: >>>>>   1.865188613e+03 >=   1.852955956e+03   0.7% (4; 0)
++   673: mip =   1.865188613e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.62),(18,0.96),})
+(1,{(1,1),(2,1),(7,0.47),(18,0.037),})
+(2,{})
+(3,{(10,1),(11,0.19),(14,0.23),(15,1),})
+(4,{(3,1),(5,0.38),(8,1),(13,1),})
+(5,{})
+(6,{(6,1),(11,0.81),(16,1),})
+(7,{(4,1),(5,0.62),(7,0.53),})
+(8,{(9,1),(14,0.15),(17,1),(19,1),})
+(9,{})
+Z = 1865.19
+COL = 19
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    673: obj =   1.833548803e+03  infeas =  6.296e-01 (1)
+*   676: obj =   1.849992308e+03  infeas =  0.000e+00 (0)
+*   684: obj =   1.839612243e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   684: mip =     not found yet >=              -inf        (1; 0)
++   698: >>>>>   1.865208213e+03 >=   1.856110811e+03   0.5% (4; 0)
++   699: mip =   1.865208213e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,1),(11,0.14),(14,0.31),(15,1),})
+(4,{(3,1),(5,0.33),(8,1),(11,0.048),(13,1),})
+(5,{})
+(6,{(6,1),(11,0.81),(16,1),})
+(7,{(4,1),(5,0.67),(7,0.47),})
+(8,{(9,1),(14,0.15),(17,1),(19,1),})
+(9,{})
+Z = 1865.21
+COL = 132
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    699: obj =   1.839612243e+03  infeas =  1.905e-01 (1)
+    700: obj =   1.839612243e+03  infeas =  1.905e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,1),(11,0.14),(14,0.31),(15,1),})
+(4,{(3,1),(5,0.33),(8,1),(11,0.048),(13,1),})
+(5,{})
+(6,{(6,1),(11,0.81),(16,1),})
+(7,{(4,1),(5,0.67),(7,0.47),})
+(8,{(9,1),(14,0.15),(17,1),(19,1),})
+(9,{})
+Z = 0
+COL = 132
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    700: obj =   1.839612243e+03  infeas =  8.095e-01 (1)
+*   703: obj =   1.903352716e+03  infeas =  5.551e-17 (0)
+*   713: obj =   1.866217345e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   713: mip =     not found yet >=              -inf        (1; 0)
++   719: >>>>>   1.887921206e+03 >=   1.881255978e+03   0.4% (4; 0)
++   722: mip =   1.887921206e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(11,0.38),(13,1),})
+(5,{})
+(6,{(5,0.33),(6,1),(16,1),(17,0.59),})
+(7,{(4,1),(5,0.67),(7,0.47),})
+(8,{(9,1),(11,0.29),(14,0.46),(17,0.41),(19,1),})
+(9,{})
+Z = 1887.92
+COL = 146
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    722: obj =   1.866217345e+03  infeas =  2.381e-01 (1)
+*   723: obj =   1.874683536e+03  infeas =  2.776e-17 (1)
+*   729: obj =   1.868486990e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   729: mip =     not found yet >=              -inf        (1; 0)
++   740: >>>>>   1.893253507e+03 >=   1.884241137e+03   0.5% (4; 0)
++   749: mip =   1.893253507e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(11,0.38),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,0.88),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.26),(9,1),(11,0.29),(14,0.46),(17,0.12),(19,1),})
+(9,{})
+Z = 1893.25
+COL = 138
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+*   749: obj =   1.868486990e+03  infeas =  0.000e+00 (1)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   749: mip =     not found yet >=              -inf        (1; 0)
++   758: >>>>>   1.894046077e+03 >=   1.884241137e+03   0.5% (4; 0)
++   761: mip =   1.894046077e+03 >=     tree is empty   0.0% (0; 7)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,1),(12,1),(14,0.54),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(3,1),(8,1),(11,0.38),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.37),(9,1),(11,0.29),(14,0.46),(19,1),})
+(9,{})
+Z = 1894.05
+COL = 15
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    761: obj =   1.876867496e+03  infeas =  1.154e+00 (1)
+*   766: obj =   1.904873520e+03  infeas =  0.000e+00 (1)
+*   769: obj =   1.882082427e+03  infeas =  0.000e+00 (1)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   769: mip =     not found yet >=              -inf        (1; 0)
++   777: >>>>>   1.909749373e+03 >=   1.909749373e+03   0.0% (2; 0)
++   777: mip =   1.909749373e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(10,1),(11,0.33),(15,1),})
+(4,{(0,0.5),(3,1),(8,1),(11,0.095),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.37),(9,1),(11,0.57),(19,1),})
+(9,{})
+Z = 1909.75
+COL = 172
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    777: obj =   1.882082427e+03  infeas =  3.333e-01 (2)
+*   781: obj =   1.896911813e+03  infeas =  0.000e+00 (1)
+*   788: obj =   1.896911813e+03  infeas =  2.465e-32 (1)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   788: mip =     not found yet >=              -inf        (1; 0)
++   795: >>>>>   1.932717703e+03 >=   1.928641283e+03   0.2% (2; 0)
++   797: mip =   1.932717703e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(7,0.16),(9,0.18),(10,1),(15,1),})
+(4,{(0,0.5),(3,1),(7,0.11),(8,1),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(9,0.82),(11,1),(19,1),})
+(9,{})
+Z = 1932.72
+COL = 170
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    797: obj =   1.896911813e+03  infeas =  1.818e-01 (2)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(7,0.16),(9,0.18),(10,1),(15,1),})
+(4,{(0,0.5),(3,1),(7,0.11),(8,1),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(9,0.82),(11,1),(19,1),})
+(9,{})
+Z = 0
+COL = 170
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    797: obj =   1.896911813e+03  infeas =  8.182e-01 (2)
+*   809: obj =   1.945081658e+03  infeas =  0.000e+00 (0)
+*   821: obj =   1.917513069e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   821: mip =     not found yet >=              -inf        (1; 0)
++   832: >>>>>   1.947540670e+03 >=   1.944923580e+03   0.1% (2; 0)
++   834: mip =   1.947540670e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.42),(9,0.18),})
+(2,{})
+(3,{(9,0.64),(10,1),(15,1),})
+(4,{(0,0.5),(3,1),(8,1),(9,0.18),(13,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 1947.54
+COL = 70
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    834: obj =   1.917513069e+03  infeas =  3.636e-01 (1)
+*   841: obj =   1.935512291e+03  infeas =  2.776e-17 (0)
+*   846: obj =   1.930561703e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   846: mip =     not found yet >=              -inf        (1; 0)
++   856: >>>>>   1.961684211e+03 >=   1.959814935e+03 < 0.1% (2; 0)
++   857: mip =   1.961684211e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(9,1),(10,1),(15,0.71),})
+(4,{(0,0.5),(3,1),(8,1),(13,1),(15,0.14),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(15,0.14),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 1961.68
+COL = 76
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    857: obj =   1.930561703e+03  infeas =  2.857e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(9,1),(10,1),(15,0.71),})
+(4,{(0,0.5),(3,1),(8,1),(13,1),(15,0.14),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(15,0.14),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 0
+COL = 76
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    857: obj =   1.930561703e+03  infeas =  7.143e-01 (1)
+*   858: obj =   1.973386964e+03  infeas =  0.000e+00 (0)
+*   863: obj =   1.973386964e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   863: mip =     not found yet >=              -inf        (1; 0)
++   873: >>>>>   2.022161654e+03 >=   2.000181042e+03   1.1% (2; 0)
++   880: mip =   2.022161654e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.42),(15,0.29),})
+(2,{})
+(3,{(0,0.5),(7,0.11),(9,1),(10,1),})
+(4,{(3,1),(8,1),(13,1),(15,0.57),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(15,0.14),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 2022.16
+COL = 96
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    880: obj =   2.006382907e+03  infeas =  1.429e-01 (0)
+*   881: obj =   2.012873920e+03  infeas =  0.000e+00 (0)
+*   883: obj =   2.009533862e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   883: mip =     not found yet >=              -inf        (1; 0)
++   890: >>>>>   2.033698830e+03 >=   2.033698830e+03   0.0% (1; 0)
++   890: mip =   2.033698830e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(0,0.5),(8,0.22),(9,1),(10,1),})
+(4,{(3,0.89),(8,0.78),(13,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(3,0.11),(7,0.37),(11,1),(19,1),})
+(9,{})
+Z = 2033.7
+COL = 84
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    890: obj =   2.009533862e+03  infeas =  5.789e-01 (1)
+*   893: obj =   2.025835671e+03  infeas =  0.000e+00 (1)
+*   903: obj =   2.017326369e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   903: mip =     not found yet >=              -inf        (1; 0)
++   907: >>>>>   2.035701754e+03 >=   2.035701754e+03   0.0% (1; 0)
++   907: mip =   2.035701754e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.53),})
+(2,{})
+(3,{(0,0.33),(8,0.33),(9,1),(10,1),})
+(4,{(3,1),(8,0.67),(13,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(0,0.17),(7,0.37),(11,1),(19,1),})
+(9,{})
+Z = 2035.7
+COL = 89
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    907: obj =   2.017326369e+03  infeas =  3.333e-01 (1)
+*   910: obj =   2.026081960e+03  infeas =  0.000e+00 (1)
+*   919: obj =   2.021949707e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   919: mip =     not found yet >=              -inf        (1; 0)
++   922: >>>>>   2.047605263e+03 >=   2.047605263e+03   0.0% (1; 0)
++   922: mip =   2.047605263e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(0,0.5),(9,1),(10,1),(13,0.11),})
+(4,{(3,1),(8,1),(13,0.68),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.37),(11,1),(13,0.11),(19,1),})
+(9,{})
+Z = 2047.61
+COL = 94
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    922: obj =   2.021949707e+03  infeas =  3.158e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(0,0.5),(9,1),(10,1),(13,0.11),})
+(4,{(3,1),(8,1),(13,0.68),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.37),(11,1),(13,0.11),(19,1),})
+(9,{})
+Z = 0
+COL = 94
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    922: obj =   2.021949707e+03  infeas =  6.842e-01 (1)
+*   927: obj =   2.048282681e+03  infeas =  0.000e+00 (0)
+*   931: obj =   2.047415880e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   931: mip =     not found yet >=              -inf        (1; 0)
++   937: >>>>>   2.099684211e+03 >=   2.099684211e+03   0.0% (1; 0)
++   937: mip =   2.099684211e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(9,1),(10,1),(13,0.42),})
+(4,{(0,0.5),(3,1),(7,0.37),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(11,1),(13,0.47),(19,1),})
+(9,{})
+Z = 2099.68
+COL = 28
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    937: obj =   2.047415880e+03  infeas =  7.895e-01 (1)
+    944: obj =   2.054229510e+03  infeas =  3.684e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(7,0.63),})
+(2,{})
+(3,{(9,1),(10,1),(13,0.42),})
+(4,{(0,0.5),(3,1),(7,0.37),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(11,1),(13,0.47),(19,1),})
+(9,{})
+Z = 0
+COL = 28
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    944: obj =   2.054229510e+03  infeas =  6.316e-01 (1)
+*   945: obj =   2.059134773e+03  infeas =  0.000e+00 (0)
+*   959: obj =   2.049050968e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   959: mip =     not found yet >=              -inf        (1; 0)
++   965: >>>>>   2.107842105e+03 >=   2.107842105e+03   0.0% (1; 0)
++   965: mip =   2.107842105e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(13,0.53),})
+(2,{})
+(3,{(7,0.16),(9,1),(10,1),(13,0.37),})
+(4,{(0,0.5),(3,1),(7,0.37),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 2107.84
+COL = 34
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    965: obj =   2.049050968e+03  infeas =  5.789e-01 (1)
+    974: obj =   2.053261494e+03  infeas =  3.684e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.5),(12,1),(14,1),(18,1),})
+(1,{(1,1),(2,1),(13,0.53),})
+(2,{})
+(3,{(7,0.16),(9,1),(10,1),(13,0.37),})
+(4,{(0,0.5),(3,1),(7,0.37),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{})
+Z = 0
+COL = 34
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+    974: obj =   2.053261494e+03  infeas =  6.316e-01 (1)
+*   985: obj =   2.059134773e+03  infeas =  0.000e+00 (0)
+*   992: obj =   2.055555223e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   992: mip =     not found yet >=              -inf        (1; 0)
++   999: >>>>>   2.142114035e+03 >=   2.142114035e+03   0.0% (3; 0)
++   999: mip =   2.142114035e+03 >=     tree is empty   0.0% (0; 5)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(0,0.17),(12,1),(13,0.21),(14,1),(18,1),})
+(1,{(0,0.83),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),(13,0.53),})
+(4,{(3,1),(7,0.68),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.32),(11,1),(13,0.16),(19,1),})
+(9,{})
+Z = 2142.11
+COL = 21
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+*   999: obj =   2.096232146e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++   999: mip =     not found yet >=              -inf        (1; 0)
++  1002: >>>>>   2.150210526e+03 >=   2.150210526e+03   0.0% (1; 0)
++  1002: mip =   2.150210526e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(12,1),(13,0.32),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),(13,0.42),})
+(4,{(3,1),(7,0.68),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.32),(11,1),(13,0.16),(19,1),})
+(9,{})
+Z = 2150.21
+COL = 88
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1002: obj =   2.145012355e+03  infeas =  9.375e-02 (0)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,}
+LIAISONS :
+(0,{(12,1),(13,0.32),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),(13,0.42),})
+(4,{(3,1),(7,0.68),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(7,0.32),(11,1),(13,0.16),(19,1),})
+(9,{})
+Z = 0
+COL = 88
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+*  1002: obj =   2.096232146e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++  1002: mip =     not found yet >=              -inf        (1; 0)
++  1008: >>>>>   2.598421053e+03 >=   2.239894737e+03  13.8% (3; 0)
++  1012: >>>>>   2.280684211e+03 >=   2.280684211e+03   0.0% (2; 1)
++  1012: mip =   2.280684211e+03 >=     tree is empty   0.0% (0; 5)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(13,0.32),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(11,1),(13,0.47),(19,1),})
+(9,{(7,1),(13,0.11),})
+Z = 2280.68
+COL = 174
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1012: obj =   2.096232146e+03  infeas =  5.263e-01 (1)
+   1014: obj =   2.096232146e+03  infeas =  5.263e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(13,0.32),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(11,1),(13,0.47),(19,1),})
+(9,{(7,1),(13,0.11),})
+Z = 0
+COL = 174
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1014: obj =   2.096232146e+03  infeas =  4.737e-01 (1)
+*  1018: obj =   2.121827307e+03  infeas =  0.000e+00 (0)
+*  1027: obj =   2.114753893e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++  1027: mip =     not found yet >=              -inf        (1; 0)
++  1033: >>>>>   2.598421053e+03 >=   2.261473684e+03  13.0% (3; 0)
++  1035: >>>>>   2.287789474e+03 >=   2.287789474e+03   0.0% (2; 1)
++  1035: mip =   2.287789474e+03 >=     tree is empty   0.0% (0; 5)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(13,0.32),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(13,0.11),})
+(8,{(11,1),(19,1),})
+(9,{(7,1),(13,0.58),})
+Z = 2287.79
+COL = 194
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1035: obj =   2.114753893e+03  infeas =  9.474e-01 (1)
+*  1039: obj =   2.162538855e+03  infeas =  0.000e+00 (1)
+*  1052: obj =   2.159280925e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++  1052: mip =     not found yet >=              -inf        (1; 0)
++  1057: >>>>>   2.326000000e+03 >=   2.326000000e+03   0.0% (1; 0)
++  1057: mip =   2.326000000e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.32),(11,1),(19,1),})
+(9,{(7,0.58),(13,1),})
+Z = 2326
+COL = 188
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1057: obj =   2.159280925e+03  infeas =  5.789e-01 (1)
+   1058: obj =   2.161612504e+03  infeas =  4.211e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.32),(11,1),(19,1),})
+(9,{(7,0.58),(13,1),})
+Z = 0
+COL = 188
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1058: obj =   2.161612504e+03  infeas =  5.789e-01 (1)
+*  1066: obj =   2.177601170e+03  infeas =  0.000e+00 (0)
+*  1073: obj =   2.161594555e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++  1073: mip =     not found yet >=              -inf        (1; 0)
++  1078: >>>>>   2.364684211e+03 >=   2.364684211e+03   0.0% (1; 0)
++  1078: mip =   2.364684211e+03 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(7,0.42),(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2364.68
+COL = 168
+COLONNE LIBRE
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1078: obj =   2.161594555e+03  infeas =  5.263e-01 (1)
+   1081: obj =   2.161594555e+03  infeas =  5.263e-01 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+glp_intopt: optimal basis to initial LP relaxation not provided
+FACILITES :
+{0,1,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{})
+(3,{(7,0.42),(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),(7,0.11),})
+(8,{(7,0.47),(11,1),(19,1),})
+(9,{(13,1),})
+Z = 0
+COL = 168
+COLONNE FIXEE A 1
+GLPK Simplex Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+   1081: obj =   2.161594555e+03  infeas =  4.737e-01 (1)
+*  1082: obj =   2.171192126e+03  infeas =  0.000e+00 (0)
+*  1088: obj =   2.171192126e+03  infeas =  0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+GLPK Integer Optimizer, v4.52
+30 rows, 210 columns, 410 non-zeros
+10 integer variables, all of which are binary
+Integer optimization begins...
++  1088: mip =     not found yet >=              -inf        (1; 0)
++  1096: >>>>>   2.815684211e+03 >=   2.563842105e+03   8.9% (2; 0)
++  1100: >>>>>   2.725000000e+03 >=   2.725000000e+03   0.0% (1; 1)
++  1100: mip =   2.725000000e+03 >=     tree is empty   0.0% (0; 3)
+INTEGER OPTIMAL SOLUTION FOUND
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = -1
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 168
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 168
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 188
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 188
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 194
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 174
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 174
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 88
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 88
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 21
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 34
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 34
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 28
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 28
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 94
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 94
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 89
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 84
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 96
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 76
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 76
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 70
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 170
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 170
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 172
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 15
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 138
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 146
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 132
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 132
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 19
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 71
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 32
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 32
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 13
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 145
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 128
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 128
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 127
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 137
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 180
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 35
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 35
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 23
+FACILITES :
+{0,1,2,3,4,6,7,8,9,}
+LIAISONS :
+(0,{(12,1),(14,1),(18,1),})
+(1,{(0,1),(1,1),(2,1),})
+(2,{(7,1),})
+(3,{(9,1),(10,1),})
+(4,{(3,1),(8,1),(15,1),})
+(5,{})
+(6,{(6,1),(16,1),(17,1),})
+(7,{(4,1),(5,1),})
+(8,{(11,1),(19,1),})
+(9,{(13,1),})
+Z = 2725
+COL = 22
+LES FACILITES :
+{0,1,2,3,4,6,7,8,9}
+LES LIAISONS :
+(0,{(0,1),(12,1),(18,1)})
+(1,{(1,1),(2,1),(9,1)})
+(2,{(19,1)})
+(3,{(11,1),(15,1)})
+(4,{(8,1),(10,1),(13,1)})
+(6,{(14,1),(16,1)})
+(7,{(4,1),(5,1)})
+(8,{(3,1),(6,1),(17,1)})
+(9,{(7,1)})
+Z = 2518
+temps : 0s

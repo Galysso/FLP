@@ -85,7 +85,7 @@ void BBound::casColonneZero(int col) {
 }
 
 void BBound::search() {
-	//~ bornePrimale = 50;
+	bornePrimale = 2015;
 	// ----- debug
 	int nbSetToOne = 0;
 	int nbSetToZero = 0;
@@ -105,6 +105,7 @@ void BBound::search() {
 		
 		if (!hasSolution) {
 			--profondeur;
+			hasSolution = true;
 		} else if (col == -1) {
 			casSolutionEntiere();
 		} else if (modelisation->isSetToOne(col)) {
@@ -115,8 +116,12 @@ void BBound::search() {
 			hasSolution = solutionValide();
 		} else {
 			casColonneLibre(col);
-			hasSolution = true;
+			//~ hasSolution = true;
 		}
+		
+		//~ if (modelisation->getZ() >= 2013.0 && modelisation->getZ() <= 2015.0) {
+			//~ break;
+		//~ }
 	} while (profondeur != -1);
 	bestSol.afficherSol();
 }
