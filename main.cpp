@@ -19,22 +19,22 @@ int main(int argc, char* argv[]) {
 	clock_t debut, fin;
 	
 	//~ Donnees d("datas/test.dat");
-	Donnees d("datas/20x10_1.dat");		// p1
-	//~ Donnees d("datas/20x10_2.dat");		// p3
-	//~ Donnees d("datas/20x10_3.dat");		// p4
-	//~ Donnees d("datas/20x10_4.dat");		// p5
-	//~ Donnees d("datas/30x15_1.dat");			// p11
-	//~ Donnees d("datas/30x15_2.dat");		// p14
-	//~ Donnees d("datas/40x20.dat");		// p25	// valeur optimale trouvée une fois
-	//~ Donnees d("datas/50x20.dat");		// p32
-	//~ Donnees d("datas/60x30.dat");		// p35
-	//~ Donnees d("datas/75x30.dat");		// p45
-		
+	//~ Donnees d("datas/20x10_1.dat");		// p1	zBest = 2014
+	//~ Donnees d("datas/20x10_2.dat");		// p3	zBest = 6051
+	//~ Donnees d("datas/20x10_3.dat");		// p4	zBest = 7168
+	//~ Donnees d("datas/20x10_4.dat");		// p5	zBest = 4552
+	//~ Donnees d("datas/30x15_1.dat");		// p11
+	//~ Donnees d("datas/30x15_2.dat");		// p14	zBest = 5965
+	//~ Donnees d("datas/40x20.dat");		// p25	zBest = 8947
+	Donnees d("datas/50x20.dat");		// p32	zBest = 9881
+	//~ Donnees d("datas/60x30.dat");		// p35	zBest = 5456
+	//~ Donnees d("datas/75x30.dat");		// p45	zBest = 17676
+	
 	BBound bbound(&d);
-	//~ bbound.testP1();
 	debut = clock();
 	bbound.search();
 	fin = clock();	
 	cout << "temps : " << (fin-debut)/CLOCKS_PER_SEC << "s" << endl;
+	
 	return 0;
 }

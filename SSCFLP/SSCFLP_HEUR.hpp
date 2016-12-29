@@ -15,12 +15,12 @@
 
 class SSCFLP_HEUR {
 	private:
-		Donnees *d;
-		double z;
-		double **deltas;		// delta[i][j] = c[i][j] - min(c[*][j]),    le client j fixé
-		int **indicesDeltas;	// Les indices des deltas triés
-		double *efficacites;	// (cOuverture[i] + Ej(deltas[i][j])) / M
-		int *indicesEfficacites;// Les indices des efficacités triées
+		Donnees *d;					// L'instance du problème
+		double z;					// La valeur de la fonction objectif
+		double **deltas;			// delta[i][j] = c[i][j] - min(c[*][j]),    le client j fixé
+		int **indicesDeltas;		// Les indices des deltas triés
+		double *efficacites;		// (cOuverture[i] + Ej(deltas[i][j])) / M
+		int *indicesEfficacites;	// Les indices des efficacités triées
 		bool *facilites;
 		bool **liaisons;
 		bool *clientsAssignes;

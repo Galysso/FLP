@@ -1,0 +1,102 @@
+
+borne initiale : 7541
+
+nombre d'itérations : 33
+profondeur de l'arbre : 23
+nombre de relaxation : 28
+nouvelle borne trouvée : 7319
+
+nombre d'itérations : 65
+profondeur de l'arbre : 25
+nombre de relaxation : 45
+nouvelle borne trouvée : 6656
+
+nombre d'itérations : 144
+profondeur de l'arbre : 22
+nombre de relaxation : 83
+nouvelle borne trouvée : 6590
+
+nombre d'itérations : 327
+profondeur de l'arbre : 23
+nombre de relaxation : 175
+nouvelle borne trouvée : 6574
+
+nombre d'itérations : 363
+profondeur de l'arbre : 21
+nombre de relaxation : 192
+nouvelle borne trouvée : 6558
+
+nombre d'itérations : 379
+profondeur de l'arbre : 23
+nombre de relaxation : 201
+nouvelle borne trouvée : 6550
+
+nombre d'itérations : 1293
+profondeur de l'arbre : 23
+nombre de relaxation : 658
+nouvelle borne trouvée : 6546
+
+nombre d'itérations : 1903
+profondeur de l'arbre : 21
+nombre de relaxation : 962
+nouvelle borne trouvée : 6521
+
+nombre d'itérations : 2258
+profondeur de l'arbre : 26
+nombre de relaxation : 1142
+nouvelle borne trouvée : 6265
+
+nombre d'itérations : 5759
+profondeur de l'arbre : 29
+nombre de relaxation : 2894
+nouvelle borne trouvée : 6251
+
+nombre d'itérations : 12588
+profondeur de l'arbre : 20
+nombre de relaxation : 6304
+nouvelle borne trouvée : 6121
+
+nombre d'itérations : 19873
+profondeur de l'arbre : 19
+nombre de relaxation : 9946
+nouvelle borne trouvée : 6112
+
+nombre d'itérations : 33815
+profondeur de l'arbre : 23
+nombre de relaxation : 16919
+nouvelle borne trouvée : 6103
+
+nombre d'itérations : 339702
+profondeur de l'arbre : 20
+nombre de relaxation : 169861
+nouvelle borne trouvée : 6102
+
+nombre d'itérations : 535236
+profondeur de l'arbre : 20
+nombre de relaxation : 267628
+nouvelle borne trouvée : 6094
+
+nombre d'itérations : 824080
+profondeur de l'arbre : 14
+nombre de relaxation : 412047
+nouvelle borne trouvée : 6073
+
+nombre d'itérations : 877116
+profondeur de l'arbre : 16
+nombre de relaxation : 438566
+nouvelle borne trouvée : 6051
+
+nombre d'itération : 897733
+nombre de relaxation : 448866
+LES FACILITES :
+{0,2,3,4,6,8,9}
+LES LIAISONS :
+(0,{(1,1)})
+(2,{(2,1),(9,1),(18,1)})
+(3,{(0,1),(8,1),(13,1),(14,1)})
+(4,{(7,1),(16,1),(17,1)})
+(6,{(6,1),(15,1)})
+(8,{(4,1),(5,1),(10,1),(19,1)})
+(9,{(3,1),(11,1),(12,1)})
+Z = 6051
+temps : 312s

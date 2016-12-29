@@ -1,4 +1,5 @@
 #include "SSCFLP_SOL.hpp"
+#include "../Donnees/Donnees.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -87,14 +88,14 @@ void SSCFLP_SOL::afficherSol() {
 	
 	cout << "LES FACILITES :" << endl;
 	i = 0; j = 0;
-	while ((i < N) && !(facilites[i] > 0)) {
+	while ((i < N) && !(facilites[i] > 0+delta)) {
 		++i;
 	}
 	cout << "{";
 	if (i < N) {
 		cout << i;
 		for (i=i+1; i < N; ++i) {
-			if (facilites[i] > 0) {
+			if (facilites[i] > 0+delta) {
 				cout << "," << i;
 			}
 		}
@@ -106,13 +107,13 @@ void SSCFLP_SOL::afficherSol() {
 	i = 0;
 	while (i < N) {
 		j = 0;
-		while ((j < M) && !(liaisons[i][j] > 0)) {
+		while ((j < M) && !(liaisons[i][j] > 0+delta)) {
 			++j;
 		}
 		if (j < M) {
 			cout << "(" << i << ",{(" << j << "," << liaisons[i][j] << ")";
 			for (j=j+1; j < M; ++j) {
-				if (liaisons[i][j] > 0) {
+				if (liaisons[i][j] > 0+delta) {
 					cout << ",(" << j << "," << liaisons[i][j] << ")";
 				}
 			}

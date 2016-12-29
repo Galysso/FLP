@@ -1,6 +1,8 @@
 #ifndef DONNEES_HPP
 #define DONNEES_HPP
 
+#define delta 0.000001
+
 #include <string>
 
 class Donnees {
@@ -9,12 +11,13 @@ class Donnees {
 		int N;							/// Nombre de locations
 		double **coutsAllocation;	/// Vecteur des coûts de liaison
 		double *demandes;			/// Vecteur des demandes des clients
-		double *coutsOuverture;	/// Vecteur des coûts des ouverture
+		double *coutsOuverture;		/// Vecteur des coûts des ouverture
 		double *capacites;			/// Vecteur des capacités des locations
 		
 	public:
 		// Constructeur vide, nécessite un parser
 		Donnees(std::string fichier);
+		~Donnees();
 		
 		// Setters
 		void setM(int M);

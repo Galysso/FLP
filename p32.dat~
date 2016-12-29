@@ -1,0 +1,47 @@
+
+borne initiale : 13380
+
+nombre d'itérations : 34
+profondeur de l'arbre : 32
+nombre de relaxation : 33
+nouvelle borne trouvée : 9921
+
+nombre d'itérations : 2210
+profondeur de l'arbre : 24
+nombre de relaxation : 1117
+nouvelle borne trouvée : 9913
+
+nombre d'itérations : 2652
+profondeur de l'arbre : 28
+nombre de relaxation : 1340
+nouvelle borne trouvée : 9910
+
+nombre d'itérations : 3865
+profondeur de l'arbre : 21
+nombre de relaxation : 1943
+nouvelle borne trouvée : 9897
+
+nombre d'itérations : 25034
+profondeur de l'arbre : 32
+nombre de relaxation : 12533
+nouvelle borne trouvée : 9892
+
+nombre d'itérations : 25953
+profondeur de l'arbre : 27
+nombre de relaxation : 12990
+nouvelle borne trouvée : 9881
+
+nombre d'itération : 36733
+nombre de relaxation : 18366
+LES FACILITES :
+{2,4,6,7,8}
+LES LIAISONS :
+(2,{(6,1),(8,1),(9,1),(15,1),(16,1),(17,1),(20,1),(23,1),(24,1),(33,1)})
+(4,{(0,1),(3,1),(18,1),(19,1),(26,1),(39,1),(44,1),(45,1),(47,1)})
+(6,{(10,1),(11,1),(13,1),(14,1),(28,1),(30,1),(31,1),(32,1),(40,1),(48,1)})
+(7,{(1,1),(22,1),(27,1),(29,1),(37,1),(38,1),(43,1),(46,1)})
+(8,{(2,1),(4,1),(5,1),(7,1),(12,1),(21,1),(25,1),(34,1),(35,1),(36,1),(41,1),(42,1),(49,1)})
+Z = 9881
+temps : 108s
+
+borne initiale : 7169

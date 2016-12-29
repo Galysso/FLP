@@ -15,6 +15,23 @@ Donnees::Donnees(string nomFichier) {
 	p.lecture(this, nomFichier);
 }
 
+Donnees::~Donnees() {
+	//~ if (coutsAllocation != NULL) {
+		//~ for (int i = 0; i < M; ++i) {
+			//~ delete[] coutsAllocation;
+		//~ }
+	//~ }
+	//~ if (demandes != NULL) {
+		//~ delete(demandes);
+	//~ }
+	//~ if (coutsOuverture != NULL) {
+		//~ delete(coutsOuverture);
+	//~ }
+	//~ if (capacites != NULL) {
+		//~ delete(capacites);
+	//~ }
+}
+
 void Donnees::setM(int M) {
 	this->M = M;
 }

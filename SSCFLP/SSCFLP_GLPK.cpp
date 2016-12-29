@@ -18,12 +18,21 @@ SSCFLP_GLPK::SSCFLP_GLPK(Donnees *d) {
 	this->prob = NULL;
 	this->d = d;
 	this->entier = true;
-	this->nbRow = this->d->getM() + this->d->getN();
+	glp_term_out(0);
 }
 
 SSCFLP_GLPK::~SSCFLP_GLPK() {
 	if (prob != NULL) {
 		glp_delete_prob(prob);
+	}
+	if (ia != NULL) {
+		delete(ia);
+	}
+	if (ja != NULL) {
+		delete(ja);
+	}
+	if (ar != NULL) {
+		delete(ar);
 	}
 }
 
@@ -129,43 +138,12 @@ void SSCFLP_GLPK::glpkModeliserProbleme() {
 	
 	// Chargement de la matrice
 	glp_load_matrix(this->prob, taille, ia, ja, ar);
-	glp_write_lp(this->prob, NULL, "modelisation");
+	//~ glp_write_lp(this->prob, NULL, "modelisation");
 }
 
 void SSCFLP_GLPK::glpkResoudreProbleme() {
 	glp_simplex(this->prob, NULL);
 	glp_intopt(this->prob, NULL);
-}
-
-void SSCFLP_GLPK::glpkAfficherSolutionLatex() {
-	int M = this->d->getM();
-	int N = this->d->getN();
-	int i, j, col;
-	
-	double z = glp_mip_obj_val(this->prob);
-	
-	cout << endl << "\\begin{itemize}"<<endl;
-	cout << "\\item Temps de résolution : " << endl;
-	cout << "\\item Valeur de la fonction objectif : " << z << endl;
-	cout << "\\item Les facilités à construire sont : \\{";
-	for (i = M*N+1; i <= M*N+N; ++i) {
-		if (glp_mip_col_val(this->prob, i)) {
-			cout << i-M*N-1 << ",";
-		}
-	}
-	cout << "\\}"<<endl;
-	
-	cout << "\\item Les liaisons à faire sont : \n\\begin{itemize}" << endl;
-	for (int fac = 1; fac <= N; ++fac) {
-		cout << "\\item (" << fac-1 <<",\\{";
-		for (int client = 1; client <= M; ++client) {
-			col = client+(fac-1)*M;
-			if (glp_mip_col_val(this->prob, col) > 0) {
-				cout << client-1 << ",";
-			}
-		}
-		cout << "\\})" << endl;
-	}
 }
 
 void SSCFLP_GLPK::glpkAfficherSolution() {
@@ -246,7 +224,14 @@ int SSCFLP_GLPK::getColFac(int indFacil) const {
 	return (this->d->getM()*this->d->getN()) + indFacil + 1;
 }
 
-/// Renvoie l'indice de la facilité qui doit être mise à 1
+int SSCFLP_GLPK::getColFacFromLink(int indLink) const {
+	return ((d->getM()*d->getN()) + ((indLink-1)/d->getM()) + 1);
+}
+
+int SSCFLP_GLPK::getFacFromLink(int indLink) const {
+	return ((indLink-1)/d->getM());
+}
+
 int SSCFLP_GLPK::getColLinkNearestToOne() const {
 	double max = 0;
 	int indMax = -1;
@@ -270,81 +255,28 @@ int SSCFLP_GLPK::getColLinkNearestToOne() const {
 	return indMax;
 }
 
-void SSCFLP_GLPK::setLinkToOne(int i) {
+void SSCFLP_GLPK::setLinkToOne(int i, int nbUn) {
 	glp_set_col_bnds(this->prob, i, GLP_FX, 1.0, 1.0);
+	if (nbUn == 1) {
+		glp_set_col_bnds(this->prob, getColFacFromLink(i), GLP_FX, 1.0, 1.0);
+	}
 }
 
-void SSCFLP_GLPK::setLinkToZero(int i) {
+void SSCFLP_GLPK::setLinkToZero(int i, int nbUn, int nbZero) {
 	glp_set_col_bnds(this->prob, i, GLP_FX, 0.0, 0.0);
+	if (nbUn == 0) {
+		glp_set_col_bnds(this->prob, getColFacFromLink(i), GLP_DB, 0.0, 1.0);
+	}
+	if (nbZero == d->getM()) {
+		glp_set_col_bnds(this->prob, getColFacFromLink(i), GLP_FX, 0.0, 0.0);
+	}
 }
 
-void SSCFLP_GLPK::setLinkToFree(int i) {
+void SSCFLP_GLPK::setLinkToFree(int i, int nbZero) {
 	glp_set_col_bnds(this->prob, i, GLP_DB, 0.0, 1.0);
-}
-
-//~ vector<int> SSCFLP_GLPK::getColsToConstraint() {
-	//~ vector<int> res;
-//~ 
-	//~ int N = this->d->getN();
-	//~ int M = this->d->getM();
-	//~ int col;
-	//~ double val;
-	//~ 
-	//~ for (int i = 0; i < N; ++i) {
-		//~ for (int j = 0; j < M; ++j) {
-			//~ col = getColLink(i, j);
-			//~ val = glp_mip_col_val(this->prob, col);
-			//~ 
-			//~ if ((val+delta < 1) && (val-delta > 0)) {
-				//~ res.push_back(col);
-			//~ }
-		//~ }
-	//~ }
-	//~ 
-	//~ if (res.size() == 0) {
-		//~ res.push_back(-1);
-	//~ }
-	//~ 
-	//~ return res;
-//~ }
-
-vector<int> SSCFLP_GLPK::getColsToConstraint() {
-	vector<int> res;
-
-	int N = this->d->getN();
-	int M = this->d->getM();
-	int col;
-	double val;
-	
-	for (int i = 0; i < N; ++i) {
-		for (int j = 0; j < M; ++j) {
-			col = getColLink(i, j);
-			val = glp_mip_col_val(this->prob, col);
-			
-			if ((val+delta < 1) && (val-delta > 0)) {
-				res.push_back(col);
-			}
-		}
+	if (nbZero == d->getM()-1) {
+		glp_set_col_bnds(this->prob, getColFacFromLink(i), GLP_DB, 0.0, 1.0);
 	}
-	
-	if (res.size() == 0) {
-		res.push_back(-1);
-	} else {
-		bool trie;
-		do {
-			trie = true;
-			for (int i = 1; i < res.size(); ++i) {
-				if (glp_mip_col_val(this->prob, res.at(i-1)) < glp_mip_col_val(this->prob, res.at(i))) {
-					val = res.at(i-1);
-					res.at(i-1) = res.at(i);
-					res.at(i) = val;
-					trie = false;
-				}
-			}
-		} while (!trie);
-	}
-	
-	return res;
 }
 
 bool SSCFLP_GLPK::isSetToOne(int i) {
@@ -354,13 +286,6 @@ bool SSCFLP_GLPK::isSetToOne(int i) {
 bool SSCFLP_GLPK::isSetToZero(int i) {
 	return (glp_get_col_ub(this->prob, i) == 0.0);
 }
-
-	// TODO :
-	/*
-	 * Déterminer si c'est une contrainte de liaison ou d'ouverture de facilité
-	 * Déterminer l'emplacement de LA variable
-	 * Penser à la suppression, comment savoir quelle variable a été fixée lors du retour arrière ?
-	 */
 
 
 
